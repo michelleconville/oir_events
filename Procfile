@@ -1,0 +1,1 @@
+web: gunicorn oir_events.wsgi
