@@ -12,7 +12,7 @@
     --peach: #faded6;
     --almost-black: #14181a;
     --dark-green: #11501d;
-    --grey: #adbdb3;
+    --grey: #f1f1f1;
     --white: #ffffff;
 
     /* Utils */
@@ -37,12 +37,23 @@ h1, h2, h3, h4, h5, h6 {
 
 main {
     flex: 1 0 auto;
-    background-color: var(--peach);
+    background-color: var(--grey);
 }
 
 /* footer */
 footer {
     flex-shrink: 0;
+    background-color: var(--dark-green);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: var(--border);
+}
+
+.social-icon {
+    height: 2rem;
+    margin: 1rem;
 }
 
 /* header */
