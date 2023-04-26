@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+:root {
+    /* Font */
+    --main-font: 'montserrat', sans-serif;
+    --title: 'hind', sans-serif;
+
+
+    /** Colours */
+    --green: #22872e;
+    --pink: #ed2987;
+    --peach: #faded6;
+    --almost-black: #14181a;
+    --dark-green: #11501d;
+    --grey: #adbdb3;
+    --white: #ffffff;
+
+    /* Utils */
+    --smal-box-shadow: 1px -1px 7px 0 #00000061;
+    --border: 1px solid #00000030;
+}
+
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--main-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--title);
+}
+
+main {
+    flex: 1 0 auto;
+    background-color: var(--peach);
+}
+
+/* footer */
+footer {
+    flex-shrink: 0;
+}
+
+/* header */
+.navbar {
+    background-color: var(--dark-green);
+    box-shadow: var(--smal-box-shadow);
+}
+
+a.nav-link {
+    color: var(--white);
+}
+
+img.logo {
+    width: 12rem;
+}
