@@ -56,7 +56,35 @@ footer {
     margin: 1rem;
 }
 
-/* header */
+
+.bg {
+    background-color: var(--dark-green);
+}
+
+.navbar {
+    padding: 0;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+@media(max-width:767px){
+    .ul-bg {
+        background-color: var(--green);
+    }
+}
+
+nav .nav-item a:hover {
+    color: var(--pink) !important
+}
+
+img.logo {
+    width: 9rem;
+}
+
+
+/* header 
 .navbar {
     background-color: var(--dark-green);
     box-shadow: var(--smal-box-shadow);
@@ -66,9 +94,6 @@ a.nav-link {
     color: var(--white);
 }
 
-img.logo {
-    width: 12rem;
-}
 
 .active {
     border-bottom: 2px solid var(--white);
