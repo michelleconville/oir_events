@@ -1,10 +1,12 @@
 from django.views.generic import CreateView
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from .models import Event
 from .forms import EventForm
 
 
-class AddEvent(CreateView):
+class AddEvent(LoginRequiredMixin, CreateView):
     """ Add event view """
     template_name = 'events/add_event.html'
     model = Event

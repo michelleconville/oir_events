@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Add Event{% endblock %} 
+
+{% block content %}
+
+<div class="container">
+    <form method="POST" enctype="multipart/form-data" class="p-2 form">
+        <h1 class="text-left">Add Event</h1>
+        {% csrf_token %}
+        {{ form.media }} 
+        {{ form|crispy }}
+        <div class="text-left">
+            <button type="submit" class="btn btn-success mt-2">Create Event</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
