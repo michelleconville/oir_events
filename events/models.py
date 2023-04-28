@@ -22,7 +22,6 @@ class Event(models.Model):
         null=False,
     )
     image_alt = models.CharField(max_length=100, null=False, blank=False)
-    date = models.DateField(default=return_date)
     active = models.BooleanField(default=False)
     posted_date = models.DateTimeField(auto_now=True)
 
