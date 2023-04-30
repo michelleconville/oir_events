@@ -7,7 +7,7 @@ class EventForm(forms.ModelForm):
     """ Form to create a event """
     class Meta:
         model = Event
-        fields = ['title', 'summary', 'description', 'image', 'image_alt', 'active']
+        fields = ['title', 'summary', 'tickets_per_session', 'description', 'image', 'image_alt', 'active']
 
         description = forms.CharField(widget=RichTextWidget())
 

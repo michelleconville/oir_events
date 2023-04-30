@@ -5,7 +5,7 @@
 {% block content %}
 
 <div class="container">
-    <form method="POST" enctype="multipart/form-data" class="p-2 form">
+    <form method="POST" enctype="multipart/form-data" class="p-2 form text-white">
         <h1 class="text-left">Add Event</h1>
         {% csrf_token %}
         {{ form.media }} 
