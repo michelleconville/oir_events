@@ -10,11 +10,21 @@
             <img src="{{ event.image.url }}" alt="{{ event.image_alt }}" class="event-pic">
         </div>
         <div class="event-detail">
-            <h1 class="text-center">{{ event.title }}</h1>
-            <p>{{event.date}}</p>
+            <h1 class="text-left">{{ event.title }}</h1>
+            <strong><p>{{event.event_date}}</p></strong>
             <p>{{event.summary}}</p>
+            {% if request.user == event.user %} 
+            <div class="text-center">
+                <a href="#" class="btn btn-success w-25">Edit</a>
+                <a href="#" class="btn btn-success w-25">Delete</a>
+            </div>
+            {% endif %}
             <hr>
+            <h2>About this event</h2>
             <p>{{event.description|safe}}</p>
+            <hr>
+            <h3>What else to know?</h3>
+            <p>Read our FAQs or find our location</p>
         </div>
     </div>
 </div>

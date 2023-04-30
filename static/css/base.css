@@ -71,11 +71,6 @@ footer {
     box-shadow: none;
 }
 
-@media(max-width:767px){
-    .ul-bg {
-        background-color: var(--green);
-    }
-}
 
 nav .nav-item a:hover {
     color: var(--pink) !important
@@ -108,6 +103,45 @@ img.logo {
     border-radius: 10px;
 }
 
-.recipes:hover {
+.event:hover {
     cursor: pointer;
+}
+
+.event-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-pic {
+    height: auto;
+}
+
+
+@media(max-width:767px){
+    .ul-bg {
+        background-color: var(--green);
+    }
+
+    .event-img {
+        width: 40%;
+        margin: 0 auto;
+    }
+}
+
+@media(max-width:399px){
+    .event-img {
+        display: none;
+    }
+
 }
