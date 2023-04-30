@@ -4,15 +4,16 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('events', '0002_event_likes'),
+        ("events", "0002_event_likes"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='event',
-            name='tickets_per_session',
-            field=models.SmallIntegerField(choices=[('20', '20'), ('25', '25'), ('30', '30')], default='20'),
+            model_name="event",
+            name="tickets_per_session",
+            field=models.SmallIntegerField(
+                choices=[("20", "20"), ("25", "25"), ("30", "30")], default="20"
+            ),
         ),
     ]
