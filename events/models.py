@@ -18,7 +18,7 @@ class Event(models.Model):
     summary = models.CharField(max_length=300, null=False, blank=False)
     description = RichTextField(max_length=10000, null=False, blank=False)
     image = ResizedImageField(
-        size=[400, None],
+        size=[600, None],
         quality=75,
         upload_to="events/",
         force_format="WEBP",
