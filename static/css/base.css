@@ -139,7 +139,7 @@ img.logo {
     }
 }
 
-@media(max-width:399px){
+@media(max-width:599px){
     .event-img {
         display: none;
     }

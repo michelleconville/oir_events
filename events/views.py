@@ -22,12 +22,27 @@ class Events(ListView):
     model = Event
     context_object_name = "events"
 
+    def get_queryset(self):
+        return Event.objects.filter(active=True)
+
 
 class EventDetail(DetailView):
     """View an event"""
     template_name = "events/event_detail.html"
     model = Event
     context_object_name = "event"
+
+    # def get_queryset(self):
+    #     return Event.objects.filter(active=True)
+
+    def get_queryset(self):
+        return Event.objects.all()
+
+    def test_func(self):
+        if self.request.user.is_staff:
+            return True
+        else:
+            return False
 
 
 class AddEvent(LoginRequiredMixin, UserPassesTestMixin, CreateView):
