@@ -8,6 +8,7 @@ class EventAdmin(admin.ModelAdmin):
         'title',
         'summary',
         'image',
-        'active'
+        'active',
+        'event_date',
     )
     list_filter = ('title',)

@@ -29,6 +29,7 @@ class Event(models.Model):
     posted_date = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, related_name='event_likes', blank=True)
     tickets_per_session = models.SmallIntegerField(choices=GROUP_SIZE, default="20", db_index=True)
+    event_date = models.DateField(blank=True, null=True)
 
     class Meta:
         ordering = ["-posted_date"]

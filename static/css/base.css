@@ -61,6 +61,7 @@ footer {
     background-color: var(--dark-green);
 }
 
+/* header */
 .navbar {
     padding: 0;
     box-shadow: var(--smal-box-shadow);
@@ -84,22 +85,6 @@ img.logo {
     width: 9rem;
 }
 
-
-/* header 
-.navbar {
-    background-color: var(--dark-green);
-    box-shadow: var(--smal-box-shadow);
-}
-
-a.nav-link {
-    color: var(--white);
-}
-
-
-.active {
-    border-bottom: 2px solid var(--white);
-    font-weight: 600;
-}
 
 /* Form */
 
