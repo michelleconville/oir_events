@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Event{% endblock %} 
+
+{% block content %}
+
+<div class="container">
+    <form method="POST" enctype="multipart/form-data" class="p-2 form text-white">
+        <h1 class="text-left">Edit Event</h1>
+        {% csrf_token %}
+        {{ form.media }} 
+        {{ form|crispy }}
+        <div class="text-left">
+            <button type="submit" class="btn btn-success mt-2">Edit Event</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
