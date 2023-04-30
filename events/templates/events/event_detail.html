@@ -10,7 +10,7 @@
             <img src="{{ event.image.url }}" alt="{{ event.image_alt }}" class="event-pic">
         </div>
         <div class="event-detail">
-            <h1 class="text-left" mt-3>{{ event.title }}</h1>
+            <h1 class="text-left">{{ event.title }}</h1>
             <strong><p>{{event.event_date}}</p></strong>
             <p>{{event.summary}}</p>
             {% if request.user == event.user %} 

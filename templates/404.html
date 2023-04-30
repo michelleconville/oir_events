@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %} 
+    <div class="container text-center">
+        <h1>Error 404 - Page Not Found</h1>
+        <p>Sorry, we can’t find the page you were looking</p>
+        <a href="{% url 'home' %}" class="btn btn-success w-25">Home</a>
+    </div>
+{% endblock %}
