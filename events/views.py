@@ -10,6 +10,8 @@ from django.contrib.auth.mixins import (
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from django.contrib import messages
+
 from .models import Event
 from .forms import EventForm
 
@@ -29,7 +31,7 @@ class EventDetail(DetailView):
 
 
 class AddEvent(LoginRequiredMixin, UserPassesTestMixin, CreateView):
-    """Add event view"""
+    """AddEvent view to create an event if the user is staff"""
     template_name = "events/add_event.html"
     model = Event
     form_class = EventForm
@@ -43,6 +45,11 @@ class AddEvent(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+
+        messages.success(
+            self.request,
+            'Event successfully created'
+        )
         return super(AddEvent, self).form_valid(form)
 
 
@@ -52,9 +59,16 @@ class EditEvent(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Event
     form_class = EventForm
     success_url = "/events/"
+
+    def form_valid(self, form):
+        messages.success(
+            self.request,
+            'Event successfully updated'
+        )
+        return super(EditEvent, self).form_valid(form)
     
     def test_func(self):
-        return self.request.user == self.get_object().user
+        return self.request.user.is_staff
 
 
 class DeleteEvent(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -63,4 +77,14 @@ class DeleteEvent(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     success_url = "/events/"
 
     def test_func(self):
-        return self.request.user == self.get_object().user
+        if self.request.user.is_staff:
+            return True
+        else:
+            return False
+
+    def form_valid(self, form):
+        messages.success(
+            self.request,
+            'Event successfully deleted'
+        )
+        return super(DeleteEvent, self).form_valid(form)
