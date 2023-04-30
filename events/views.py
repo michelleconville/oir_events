@@ -28,12 +28,18 @@ class EventDetail(DetailView):
     context_object_name = "event"
 
 
-class AddEvent(LoginRequiredMixin, CreateView):
+class AddEvent(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     """Add event view"""
     template_name = "events/add_event.html"
     model = Event
     form_class = EventForm
     success_url = "/events/"
+
+    def test_func(self):
+        if self.request.user.is_staff:
+            return True
+        else:
+            return False
 
     def form_valid(self, form):
         form.instance.user = self.request.user
