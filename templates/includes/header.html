@@ -18,7 +18,7 @@
                     <a href="#" class="nav-link mx-3 text-white fs-6">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link mx-3 text-white fs-6">Events</a>
+                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'events' %}active{% endif %}" href="{% url 'events' %}">Events</a>
                 </li>
                 {% if request.user.is_authenticated %}
                 <li class="nav-item">

@@ -95,3 +95,20 @@ img.logo {
     border-radius: 5px;
     background-color: var(--dark-green);
 }
+
+/* Events */
+.card {
+    height: 90%;
+    margin-top: 1rem;
+}
+
+.events {
+    text-decoration: none;
+    color: var(--black);
+    background-color: var(--pink);
+    border-radius: 10px;
+}
+
+.recipes:hover {
+    cursor: pointer;
+}
