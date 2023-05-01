@@ -1,3 +1,13 @@
 from django.contrib import admin
+from .models import Booking
 
-# Register your models here.
+
+@admin.register(Booking)
+class BookingAdmin(admin.ModelAdmin):
+    list_display = (
+        "user",
+        "event_name",
+        "tour",
+        "ticket_number"
+    )
+    list_filter = ("event_name",)
