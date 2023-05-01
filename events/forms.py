@@ -17,12 +17,12 @@ class EventForm(forms.ModelForm):
             "image",
             "image_alt",
             "active",
+            "tour_times"
         ]
 
         description = forms.CharField(widget=RichTextWidget())
 
         widget = {
             "description": forms.Textarea(attrs={"rows": 10}),
-            "event_date": forms.DateInput(attrs={"type": "date"})
+            "event_date": forms.DateInput(attrs={"type": "date"}),
         }
-
