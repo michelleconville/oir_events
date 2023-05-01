@@ -15,9 +15,9 @@ class Booking(models.Model):
     event_name = models.ForeignKey(
         Event, related_name="event_name", on_delete=models.CASCADE
     )
-    tour = models.ForeignKey(
-        Event, related_name="tour", on_delete=models.CASCADE
-    )
+    # tour = models.ForeignKey(
+    #     Event, related_name="tour", on_delete=models.CASCADE
+    # )
     ticket_number = models.CharField(
         max_length=50, choices=TICKET_NUMBER, default="2"
         )

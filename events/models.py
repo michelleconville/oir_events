@@ -58,6 +58,10 @@ class Event(models.Model):
     #     widget = forms.RadioSelect,
     #     empty_label = None,
     #     )
+    # tour_times = SelectMultipleField(
+    #     max_length=300,
+    #     choices=TOUR_TIMES
+    # )
 
     class Meta:
         ordering = ["-posted_date"]

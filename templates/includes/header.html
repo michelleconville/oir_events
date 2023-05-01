@@ -15,14 +15,16 @@
                     <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link mx-3 text-white fs-6">About</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'events' %}active{% endif %}" href="{% url 'events' %}">Events</a>
                 </li>
                 {% if user.is_staff %}
                 <li class="nav-item">
                     <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'add_event' %}active{% endif %}" href="{% url 'add_event' %}">Add</a>
+                </li>
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a href="#" class="nav-link mx-3 text-white fs-6">Book</a>
                 </li>
                 {% endif %}
                 {% if request.user.is_authenticated %}
