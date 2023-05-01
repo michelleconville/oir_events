@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django import forms
+from django import forms 
 
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
@@ -16,7 +16,7 @@ TOUR_TIMES = (
     ("16:30", "16:30"), ("17:00", "17:00"), ("17:30", "17:30"),
     ("18:00", "18:00"), ("18:30", "18:30"), ("19:00", "19:00"),
     ("19:30", "19:30"), ("20:00", "20:00"), ("20:30", "20:30"),
-    ("21:00", "21:00"), ("21:30", "21:30"), 
+    ("21:00", "21:00"), ("21:30", "21:30"),
 )
 
 
