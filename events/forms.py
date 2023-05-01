@@ -23,5 +23,6 @@ class EventForm(forms.ModelForm):
 
         widget = {
             "description": forms.Textarea(attrs={"rows": 10}),
-            # "event_date": forms.DateField(attrs={'class': 'form-control'}),
+            "event_date": forms.DateInput(attrs={"type": "date"})
         }
+

@@ -4,7 +4,7 @@
     {% with request.resolver_match.url_name as url_name %}
     <nav class="navbar navbar-expand-md bg">
         <!-- Logo -->
-        <a class="navbar-brand" href="#"><img src="{% static 'images/logo.webp' %}" alt="Houses of the Oireachtas Logo" class="logo"></a>
+        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}" alt="Houses of the Oireachtas Logo" class="logo"></a>
         <button class="navbar-toggler me-5 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#btn">
             <i class='bx bx-menu bx-md'></i>
         </button>

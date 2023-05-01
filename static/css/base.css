@@ -71,6 +71,9 @@ footer {
     box-shadow: none;
 }
 
+.active {
+    border-bottom: 2px solid white;
+}
 
 nav .nav-item a:hover {
     color: var(--pink) !important
@@ -142,6 +145,10 @@ img.logo {
 @media(max-width:599px){
     .event-img {
         display: none;
+    }
+
+    .active {
+        border-bottom: none;
     }
 
 }
