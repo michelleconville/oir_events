@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Success{% endblock %}
+
+{% block content %}
+
+<div class="container text-center">
+    <h1>Your message has been sent</h1>
+    <p>ADD MORE TEXT HERE</p>
+    <a href="{% url 'contact' %}" class="btn btn-success w-25">Contact page</a>
+</div>
+{% endblock %}
