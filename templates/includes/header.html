@@ -28,7 +28,7 @@
                 </li>
                 {% endif %}
                 <li class="nav-item">
-                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'contact' %}active{% endif %}" href="#">Contact</a>
+                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
                 </li>
                 {% if request.user.is_authenticated %}
                 <li class="nav-item">
