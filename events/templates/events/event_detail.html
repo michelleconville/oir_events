@@ -11,8 +11,10 @@
         </div>
         <div class="event-detail">
             <h1 class="text-left">{{ event.title }}</h1>
-            <strong><p>{{event.event_date}}</p></strong>
+            <strong>Date of event:</strong><p>{{event.event_date}}</p>
+            <strong>Tour times:</strong><p>{{event.tour_times}}</p>
             <p>{{event.summary}}</p>
+            <a href="#" class="btn btn-success w-25">Book your tickets</a>
             {% if request.user == event.user %} 
             <div class="text-center">
                 <a href="{% url 'edit_event' event.id %}" class="btn btn-success w-25">Edit</a>

@@ -4,6 +4,7 @@ from django import forms
 
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
+from multiselectfield import MultiSelectField
 
 # Choice Fields
 GROUP_SIZE = ((20, "20"), (25, "25"), (30, "30"))
@@ -50,18 +51,18 @@ class Event(models.Model):
     )
     event_date = models.DateField(blank=True, null=True)
     # tour_times = forms.ModelChoiceField(choices=TOUR_TIMES)
-    tour_times = models.CharField(
-        max_length=50, choices=TOUR_TIMES, default="10:00"
-        )
+    # tour_times = models.CharField(
+    #     max_length=50, choices=TOUR_TIMES, default="10:00"
+    #     )
     # tour_times = forms.ModelChoiceField(
     #     queryset=TOUR_TIMES.objects.all(),
     #     widget = forms.RadioSelect,
     #     empty_label = None,
     #     )
-    # tour_times = SelectMultipleField(
-    #     max_length=300,
-    #     choices=TOUR_TIMES
-    # )
+    tour_times = MultiSelectField(
+        max_length=300,
+        choices=TOUR_TIMES
+    )
 
     class Meta:
         ordering = ["-posted_date"]
