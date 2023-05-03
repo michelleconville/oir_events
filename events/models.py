@@ -6,6 +6,7 @@ from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
 from multiselectfield import MultiSelectField
 
+
 # Choice Fields
 GROUP_SIZE = ((20, "20"), (25, "25"), (30, "30"))
 
@@ -33,7 +34,7 @@ class Event(models.Model):
     summary = models.CharField(max_length=300, null=False, blank=False)
     description = RichTextField(max_length=10000, null=False, blank=False)
     image = ResizedImageField(
-        size=[600, None],
+        size=[400, None],
         quality=75,
         upload_to="events/",
         force_format="WEBP",
@@ -50,15 +51,6 @@ class Event(models.Model):
         choices=GROUP_SIZE, default="20", db_index=True
     )
     event_date = models.DateField(blank=True, null=True)
-    # tour_times = forms.ModelChoiceField(choices=TOUR_TIMES)
-    # tour_times = models.CharField(
-    #     max_length=50, choices=TOUR_TIMES, default="10:00"
-    #     )
-    # tour_times = forms.ModelChoiceField(
-    #     queryset=TOUR_TIMES.objects.all(),
-    #     widget = forms.RadioSelect,
-    #     empty_label = None,
-    #     )
     tour_times = MultiSelectField(
         max_length=300,
         choices=TOUR_TIMES

@@ -4,32 +4,32 @@
 
 {% block content %} 
 
-<div class="container">
-    <div class="event-info mt-3 p-1">
-        <div class="event-img">
-            <img src="{{ event.image.url }}" alt="{{ event.image_alt }}" class="event-pic">
-        </div>
-        <div class="event-detail">
-            <h1 class="text-left">{{ event.title }}</h1>
-            <strong>Date of event:</strong><p>{{event.event_date}}</p>
-            <strong>Tour times:</strong><p>{{event.tour_times}}</p>
-            <p>{{event.summary}}</p>
-            <a href="#" class="btn btn-success w-25">Book your tickets</a>
-            {% if request.user == event.user %} 
-            <div class="text-center">
-                <a href="{% url 'edit_event' event.id %}" class="btn btn-success w-25">Edit</a>
-                <a href="{% url 'delete_event' event.id %}" class="btn btn-success w-25">Delete</a>
+
+    <div class="container pt-4">
+        <div class="row">
+            <div class="col-12 col-lg-5 event-img">
+                <img src="{{ event.image.url }}" alt="{{ event.image_alt }}" class="event-pic">
             </div>
-            {% endif %}
-            <hr>
-            <h2>About this event</h2>
-            <p>{{event.description|safe}}</p>
-            <hr>
-            <h3>What else to know?</h3>
-            <p>Read our FAQs or find our location</p>
+            <div class="col-12 col-lg-7 event-detail">
+                <h1>{{ event.title }}</h1>
+                <div>
+                    <strong>Date of event:</strong><p>{{event.event_date}} </p>
+                </div>
+                <div>
+                    <strong>Tour times:</strong><p>{{event.tour_times}}</p>
+                </div>
+                <a href="#" class="btn btn-success w-15">Book</a>
+            </div>
         </div>
+        {% if request.user == event.user %} 
+        <div class="text-center">
+            <a href="{% url 'edit_event' event.id %}" class="btn btn-success w-25">Edit</a>
+            <a href="{% url 'delete_event' event.id %}" class="btn btn-success w-25">Delete</a>
+        </div>
+        {% endif %}
+        <h2 class="pt-4">About this event</h2>
+        <p>{{event.description|safe}}</p>
+        <h3 class="pt-4">What else to know?</h3>
+        <p>Read our FAQs or find our location</p>
     </div>
-</div>
-
-
 {% endblock %}
