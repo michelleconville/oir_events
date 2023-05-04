@@ -7,4 +7,8 @@ class BookingForm(forms.ModelForm):
 
     class Meta:
         model = Booking
-        fields = '__all__'
+        fields = [
+            "title",
+            "ticket_number"
+ 
+        ]

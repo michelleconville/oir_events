@@ -30,7 +30,7 @@ class Booking(models.Model):
     ticket_number = models.CharField(
         max_length=50, choices=TICKET_NUMBER, default="2"
         )
-    booking_date = models.DateField()
+    booking_date = models.DateTimeField(auto_now_add=True)
 
     tour_size = Event.objects.filter(tickets_per_session=True)
 

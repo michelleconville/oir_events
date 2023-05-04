@@ -7,6 +7,7 @@ class BookingAdmin(admin.ModelAdmin):
     list_display = (
         "user",
         "title",
-        "ticket_number"
+        "ticket_number",
+        "booking_date",
     )
     list_filter = ("user",)

@@ -7,12 +7,14 @@ from django.contrib.auth.mixins import (
 from django.contrib import messages
 
 from .models import Booking
+from .forms import BookingForm
 
 
 class CreateBooking(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     """ # """
     template_name = "bookings/add_booking.html"
     model = Booking
+    form_class = BookingForm
     success_url = "/events/"
 
     def test_func(self):
