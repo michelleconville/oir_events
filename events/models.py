@@ -53,7 +53,7 @@ class Event(models.Model):
     event_date = models.DateField(blank=True, null=True)
     tour_times = MultiSelectField(
         max_length=300,
-        choices=TOUR_TIMES
+        choices=TOUR_TIMES, default="10:00"
     )
 
     class Meta:

@@ -10,5 +10,7 @@ class EventAdmin(admin.ModelAdmin):
         "image",
         "active",
         "event_date",
+        "tickets_per_session",
+        "tour_times",
     )
     list_filter = ("title",)

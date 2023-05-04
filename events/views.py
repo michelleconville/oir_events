@@ -81,7 +81,7 @@ class EditEvent(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             'Event successfully updated'
         )
         return super(EditEvent, self).form_valid(form)
-    
+
     def test_func(self):
         return self.request.user.is_staff
 
