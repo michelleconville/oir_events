@@ -7,6 +7,7 @@ from django_resized import ResizedImageField
 from multiselectfield import MultiSelectField
 
 
+
 # Choice Fields
 GROUP_SIZE = ((20, "20"), (25, "25"), (30, "30"))
 
@@ -47,7 +48,7 @@ class Event(models.Model):
     likes = models.ManyToManyField(
         User, related_name="event_likes", blank=True
         )
-    tickets_per_session = models.SmallIntegerField(
+    max_capacity = models.SmallIntegerField(
         choices=GROUP_SIZE, default="20", db_index=True
     )
     event_date = models.DateField(blank=True, null=True)
@@ -55,6 +56,9 @@ class Event(models.Model):
         max_length=300,
         choices=TOUR_TIMES, default="10:00"
     )
+
+    def current_bookings(self):
+        return self.booking_set.count()
 
     class Meta:
         ordering = ["-posted_date"]

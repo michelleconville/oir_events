@@ -12,7 +12,7 @@ class EventForm(forms.ModelForm):
             "title",
             "summary",
             "event_date",
-            "tickets_per_session",
+            "max_capacity",
             "description",
             "image",
             "image_alt",

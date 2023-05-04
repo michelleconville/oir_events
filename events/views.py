@@ -39,10 +39,7 @@ class EventDetail(DetailView):
         return Event.objects.all()
 
     def test_func(self):
-        if self.request.user.is_staff:
-            return True
-        else:
-            return False
+        return self.request.user.is_staff
 
 
 class AddEvent(LoginRequiredMixin, UserPassesTestMixin, CreateView):
