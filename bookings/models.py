@@ -2,8 +2,7 @@ from django.db import models
 from events.models import Event
 from django.contrib.auth.models import User
 from multiselectfield import MultiSelectField
-
-TICKET_NUMBER = (("1", "1"), ("2", "2"), ("3", "3"), ("4", "4"),)
+from django.core.exceptions import ValidationError
 
 
 class Booking(models.Model):
@@ -16,9 +15,7 @@ class Booking(models.Model):
     title = models.ForeignKey(
          Event, related_name="event_name", on_delete=models.CASCADE
     )
-    num_tickets = models.CharField(
-        max_length=50, choices=TICKET_NUMBER, default="2"
-        )
+    num_tickets = models.PositiveIntegerField(default=1)
     booking_date = models.DateTimeField(auto_now_add=True)
 
     max_capacity = Event.objects.filter(max_capacity=True)
@@ -30,4 +27,20 @@ class Booking(models.Model):
     def __str__(self):
         return str(self.title)
 
-    
+    def clean(self):
+        """
+        Check if there are enough tickets available for the event
+        """
+        if self.num_tickets > self.title.max_capacity:
+            raise ValidationError(
+                f"Only {self.event.max_capacity} tickets available for this event"
+            )
+        return super().clean()
+
+    def save(self, *args, **kwargs):
+        """
+        Check if the number of tickets is within the limit of 4 per booking
+        """
+        if self.pk is None and self.num_tickets > 4:
+            raise ValidationError("Maximum of 4 tickets per booking")
+        return super().save(*args, **kwargs)

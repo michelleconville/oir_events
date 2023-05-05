@@ -1,6 +1,7 @@
 from django import forms
 from .models import Booking
 from events.models import Event
+from django.core.exceptions import ValidationError
 
 
 class BookingForm(forms.ModelForm):
@@ -19,5 +20,9 @@ class BookingForm(forms.ModelForm):
                 raise forms.ValidationError(
                     f"Only {title.max_capacity} tickets available for this event"
                 )
+
+            # Check if the number of tickets is greater than 4
+            if int(num_tickets) > 4:
+                raise forms.ValidationError('Maximum of 4 tickets per booking')
 
         return cleaned_data

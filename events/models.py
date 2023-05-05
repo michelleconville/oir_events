@@ -2,10 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from django import forms
 
+
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
 from multiselectfield import MultiSelectField
-
 
 
 # Choice Fields
