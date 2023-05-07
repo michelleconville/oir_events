@@ -42,6 +42,20 @@
                     </ul>
                 </li>
                 {% endif %}
+                {% if user.is_staff %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle nav-link mx-3 text-white fs-6" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Bookings
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="bookings-dropdown">
+                        <li><a class="dropdown-item" aria-current="page" href="{% url 'staff_bookings' %}">Manage
+                                Bookings</a></li>
+                        <li><a class="dropdown-item" aria-current="page" href="{% url 'create_booking' %}">New
+                                Booking</a></li>
+                    </ul>
+                </li>
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'contact' %}active{% endif %}"
                         href="{% url 'contact' %}">Contact</a>

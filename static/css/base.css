@@ -127,6 +127,10 @@ img.logo {
 }
 
 
+table {
+    background-color: var(--dark-green);
+}
+    
 
 
 @media(max-width:767px){
