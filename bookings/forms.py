@@ -25,4 +25,10 @@ class BookingForm(forms.ModelForm):
             if int(num_tickets) > 4:
                 raise forms.ValidationError('Maximum of 4 tickets per booking')
 
+            # Check if there are enough tickets available
+            if title.booked_tickets + int(num_tickets) > title.max_capacity:
+                raise forms.ValidationError(
+                    f"Only {title.max_capacity - title.booked_tickets} tickets available for this event"
+                )
+
         return cleaned_data

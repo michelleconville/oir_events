@@ -29,7 +29,7 @@ class CreateBooking(CreateView):
 
 class UserBookings(LoginRequiredMixin, ListView):
     """
-    A view to display a list of bookings made by the current user
+    A view to display a list of bookings made by the user
     """
     template_name = "bookings/user_bookings.html"
     context_object_name = "bookings"
