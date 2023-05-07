@@ -135,6 +135,8 @@ ul.dropdown-menu.show {
 /* Bookings */
 table {
     background-color: var(--dark-green);
+    border-radius: 10px;
+    box-shadow: var(--smal-box-shadow);
 }
     
 

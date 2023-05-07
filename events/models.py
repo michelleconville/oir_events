@@ -52,10 +52,14 @@ class Event(models.Model):
         choices=GROUP_SIZE, default="20", db_index=True
     )
     event_date = models.DateField(blank=True, null=True)
-    tour_times = MultiSelectField(
-        max_length=300,
-        choices=TOUR_TIMES, default="10:00"
-    )
+    # tour_times = MultiSelectField(
+    #     max_length=300,
+    #     choices=TOUR_TIMES, default="10:00"
+    # )
+
+    tour_times = models.CharField(
+         max_length=50, choices=TOUR_TIMES, default="10:00"
+         )
 
     booked_tickets = models.PositiveIntegerField(default=0)
 
