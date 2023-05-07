@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DeleteView
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render
@@ -48,3 +48,22 @@ class StaffBookings(LoginRequiredMixin, UserPassesTestMixin, ListView):
 
     def test_func(self):
         return self.request.user.is_staff
+
+
+class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """Delete an Event"""
+    model = Booking
+    success_url = "/events/"
+
+    def test_func(self):
+        if self.request.user or user.is_staff:
+            return True
+        else:
+            return False
+
+    def form_valid(self, form):
+        messages.success(
+            self.request,
+            'Event successfully deleted'
+        )
+        return super(DeleteEvent, self).form_valid(form)
