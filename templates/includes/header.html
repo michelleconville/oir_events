@@ -28,17 +28,18 @@
                         href="{% url 'add_event' %}">Add</a>
                 </li>
                 {% endif %}
-                {% if request.user.is_authenticated %}
+                {% if request.user.is_authenticated and not request.user.is_staff %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle nav-link mx-3 text-white fs-6" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Bookings
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="bookings-dropdown">
-                        <li><a class="dropdown-item" aria-current="page" href="{% url 'user_bookings' %}">Manage
-                                Bookings</a></li>
-                        <li><a class="dropdown-item" aria-current="page" href="{% url 'create_booking' %}">New
-                                Booking</a></li>
+                        <li><a class="dropdown-item text-white" aria-current="page" href="{% url 'user_bookings' %}">Manage
+                            Bookings</a></li>
+                        <li><a class="dropdown-item text-white" aria-current="page" href="{% url 'create_booking' %}">New
+                            Booking</a></li>
+                    
                     </ul>
                 </li>
                 {% endif %}
@@ -49,9 +50,9 @@
                         Bookings
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="bookings-dropdown">
-                        <li><a class="dropdown-item" aria-current="page" href="{% url 'staff_bookings' %}">Manage
+                        <li><a class="dropdown-item text-white" aria-current="page" href="{% url 'staff_bookings' %}">Manage
                                 Bookings</a></li>
-                        <li><a class="dropdown-item" aria-current="page" href="{% url 'create_booking' %}">New
+                        <li><a class="dropdown-item text-white" aria-current="page" href="{% url 'create_booking' %}">New
                                 Booking</a></li>
                     </ul>
                 </li>

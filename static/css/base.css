@@ -83,6 +83,12 @@ img.logo {
     width: 9rem;
 }
 
+ul.dropdown-menu.show {
+    background-color: var(--dark-green);
+    border: none;
+}
+
+
 
 /* Form */
 
@@ -126,7 +132,7 @@ img.logo {
     align-items: center;
 }
 
-
+/* Bookings */
 table {
     background-color: var(--dark-green);
 }
@@ -136,6 +142,11 @@ table {
 @media(max-width:767px){
     .ul-bg {
         background-color: var(--green);
+    }
+
+    ul.dropdown-menu.show {
+        background-color: var(--green);
+        border: none;
     }
 
     .event-img {
