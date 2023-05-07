@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView, DeleteView
+from django.views.generic import CreateView, ListView, DeleteView, UpdateView
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 # from django.shortcuts import render
@@ -49,6 +49,26 @@ class StaffBookings(LoginRequiredMixin, UserPassesTestMixin, ListView):
 
     def test_func(self):
         return self.request.user.is_staff
+
+
+class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    A view to edit a booking
+    """
+    template_name = "bookings/edit_booking.html"
+    model = Booking
+    form_class = BookingForm
+    success_url = reverse_lazy("staff_bookings")
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+    def form_valid(self, form):
+        messages.success(
+            self.request,
+            'Booking successfully updated'
+        )
+        return super().form_valid(form)
 
 
 class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
