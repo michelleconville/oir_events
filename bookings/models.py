@@ -18,7 +18,7 @@ class Booking(models.Model):
     num_tickets = models.PositiveIntegerField(default=1)
     booking_date = models.DateTimeField(auto_now_add=True)
 
-    max_capacity = Event.objects.filter(max_capacity=True)
+    max_capacity = Event.objects.filter()
 
     class Meta:
 
@@ -31,9 +31,10 @@ class Booking(models.Model):
         """
         Check if there are enough tickets available for the event
         """
-        if self.num_tickets > self.title.max_capacity:
+        available_tickets = self.title.available_tickets()
+        if self.num_tickets > available_tickets:
             raise ValidationError(
-                f"Only {self.event.max_capacity} tickets available for this event"
+                f"Only {available_tickets} tickets available for this event"
             )
         return super().clean()
 

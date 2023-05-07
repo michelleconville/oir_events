@@ -10,25 +10,23 @@ class BookingForm(forms.ModelForm):
         fields = ['title', 'num_tickets',]
 
     def clean(self):
+        """
+        Check if there are enough tickets available for the event
+        """
         cleaned_data = super().clean()
         title = cleaned_data.get('title')
         num_tickets = cleaned_data.get('num_tickets')
+        
 
         if title and num_tickets:
             # Check if there are enough tickets available
-            if int(num_tickets) > title.max_capacity:
+            if int(num_tickets) > title.max_capacity - title.booked_tickets:
                 raise forms.ValidationError(
-                    f"Only {title.max_capacity} tickets available for this event"
+                    f"Only {title.max_capacity - title.booked_tickets} tickets available for this event"
                 )
 
             # Check if the number of tickets is greater than 4
             if int(num_tickets) > 4:
                 raise forms.ValidationError('Maximum of 4 tickets per booking')
-
-            # Check if there are enough tickets available
-            if title.booked_tickets + int(num_tickets) > title.max_capacity:
-                raise forms.ValidationError(
-                    f"Only {title.max_capacity - title.booked_tickets} tickets available for this event"
-                )
 
         return cleaned_data

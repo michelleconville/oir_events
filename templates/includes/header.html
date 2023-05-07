@@ -4,42 +4,61 @@
     {% with request.resolver_match.url_name as url_name %}
     <nav class="navbar navbar-expand-md bg">
         <!-- Logo -->
-        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}" alt="Houses of the Oireachtas Logo" class="logo"></a>
-        <button class="navbar-toggler me-5 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#btn">
+        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}"
+                alt="Houses of the Oireachtas Logo" class="logo"></a>
+        <button class="navbar-toggler me-5 text-white" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbar-collapse" aria-controls="navbarDropdown" aria-expanded="false"
+            aria-label="Toggle navigation">
             <i class='bx bx-menu bx-md'></i>
         </button>
         <!-- Navigation items -->
-        <div class="collapse navbar-collapse ul-bg " id="btn">
+        <div class="collapse navbar-collapse ul-bg " id="navbar-collapse">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
+                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'home' %}active{% endif %}"
+                        aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'events' %}active{% endif %}" href="{% url 'events' %}">Events</a>
+                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'events' %}active{% endif %}"
+                        href="{% url 'events' %}">Events</a>
                 </li>
                 {% if user.is_staff %}
                 <li class="nav-item">
-                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'add_event' %}active{% endif %}" href="{% url 'add_event' %}">Add</a>
+                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'add_event' %}active{% endif %}"
+                        href="{% url 'add_event' %}">Add</a>
                 </li>
                 {% endif %}
                 {% if request.user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'create_booking' %}active{% endif %}" href="{% url 'create_booking' %}">Book</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle nav-link mx-3 text-white fs-6" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Bookings
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="bookings-dropdown">
+                        <li><a class="dropdown-item" aria-current="page" href="{% url 'user_bookings' %}">Manage
+                                Bookings</a></li>
+                        <li><a class="dropdown-item" aria-current="page" href="{% url 'create_booking' %}">New
+                                Booking</a></li>
+                    </ul>
                 </li>
                 {% endif %}
                 <li class="nav-item">
-                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
+                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'contact' %}active{% endif %}"
+                        href="{% url 'contact' %}">Contact</a>
                 </li>
                 {% if request.user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'accounts_logout' %}active{% endif %}" href="/accounts/logout/">Logout</a>
+                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'accounts_logout' %}active{% endif %}"
+                        href="/accounts/logout/">Logout</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'accounts_signup' %}active{% endif %}" href="/accounts/signup/">Register</a>
+                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'accounts_signup' %}active{% endif %}"
+                        href="/accounts/signup/">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login/">Login</a>
+                    <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'accounts_login' %}active{% endif %}"
+                        href="/accounts/login/">Login</a>
                 </li>
                 {% endif %}
             </ul>

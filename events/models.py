@@ -57,6 +57,8 @@ class Event(models.Model):
         choices=TOUR_TIMES, default="10:00"
     )
 
+    booked_tickets = models.PositiveIntegerField(default=0)
+
     def current_bookings(self):
         return self.booking_set.count()
 
@@ -65,3 +67,6 @@ class Event(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+    def available_tickets(self):
+        return self.max_capacity - self.booked_tickets
