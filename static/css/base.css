@@ -188,3 +188,36 @@ table {
     box-shadow: var(--dark-green);
 }
 
+@media screen and (max-width: 576px) {
+    
+    table {
+      display: block;
+      width: 90%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table tbody {
+        display: block;
+        width: 100%;
+        table-layout: fixed;
+        box-shadow: none;
+    }
+
+    table thead {
+        display: none;
+      }
+
+      table td {
+        display:inline-flex;
+        width: 100%;
+        text-align: center;
+      }
+
+      table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 5px;
+      }
+}
