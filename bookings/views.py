@@ -10,7 +10,7 @@ from .models import Booking
 from .forms import BookingForm
 
 
-class CreateBooking(CreateView):
+class CreateBooking(LoginRequiredMixin, CreateView):
     """
     A view to create a new booking
     """
