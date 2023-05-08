@@ -12,14 +12,29 @@ from multiselectfield import MultiSelectField
 GROUP_SIZE = ((20, "20"), (25, "25"), (30, "30"))
 
 TOUR_TIMES = (
-    ("10:00", "10:00"), ("10:30", "10:30"), ("11:00", "11:00"),
-    ("11:30", "11:30"), ("12:00", "12:00"), ("12:30", "12:30"),
-    ("12:30", "12:30"), ("14:00", "14:00"), ("14:30", "14:30"),
-    ("15:00", "15:00"), ("15:30", "15:30"), ("16:00", "16:00"),
-    ("16:30", "16:30"), ("17:00", "17:00"), ("17:30", "17:30"),
-    ("18:00", "18:00"), ("18:30", "18:30"), ("19:00", "19:00"),
-    ("19:30", "19:30"), ("20:00", "20:00"), ("20:30", "20:30"),
-    ("21:00", "21:00"), ("21:30", "21:30"),
+    ("10:00", "10:00"),
+    ("10:30", "10:30"),
+    ("11:00", "11:00"),
+    ("11:30", "11:30"),
+    ("12:00", "12:00"),
+    ("12:30", "12:30"),
+    ("12:30", "12:30"),
+    ("14:00", "14:00"),
+    ("14:30", "14:30"),
+    ("15:00", "15:00"),
+    ("15:30", "15:30"),
+    ("16:00", "16:00"),
+    ("16:30", "16:30"),
+    ("17:00", "17:00"),
+    ("17:30", "17:30"),
+    ("18:00", "18:00"),
+    ("18:30", "18:30"),
+    ("19:00", "19:00"),
+    ("19:30", "19:30"),
+    ("20:00", "20:00"),
+    ("20:30", "20:30"),
+    ("21:00", "21:00"),
+    ("21:30", "21:30"),
 )
 
 
@@ -28,9 +43,7 @@ class Event(models.Model):
     A model to create and manage events
     """
 
-    user = models.ForeignKey(
-        User, related_name="event_owner", on_delete=models.CASCADE
-        )
+    user = models.ForeignKey(User, related_name="event_owner", on_delete=models.CASCADE)
     title = models.CharField(max_length=300, null=False, blank=False)
     summary = models.CharField(max_length=300, null=False, blank=False)
     description = RichTextField(max_length=10000, null=False, blank=False)
@@ -45,9 +58,7 @@ class Event(models.Model):
     image_alt = models.CharField(max_length=100, null=False, blank=False)
     active = models.BooleanField(default=False)
     posted_date = models.DateTimeField(auto_now=True)
-    likes = models.ManyToManyField(
-        User, related_name="event_likes", blank=True
-        )
+    likes = models.ManyToManyField(User, related_name="event_likes", blank=True)
     max_capacity = models.SmallIntegerField(
         choices=GROUP_SIZE, default="20", db_index=True
     )
@@ -57,9 +68,7 @@ class Event(models.Model):
     #     choices=TOUR_TIMES, default="10:00"
     # )
 
-    tour_times = models.CharField(
-         max_length=50, choices=TOUR_TIMES, default="10:00"
-         )
+    tour_times = models.CharField(max_length=50, choices=TOUR_TIMES, default="10:00")
 
     booked_tickets = models.PositiveIntegerField(default=0)
 

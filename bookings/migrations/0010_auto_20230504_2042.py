@@ -4,19 +4,22 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('bookings', '0009_alter_booking_num_tickets'),
+        ("bookings", "0009_alter_booking_num_tickets"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='booking',
-            options={'ordering': ['title']},
+            name="booking",
+            options={"ordering": ["title"]},
         ),
         migrations.AlterField(
-            model_name='booking',
-            name='num_tickets',
-            field=models.CharField(choices=[('1', '1'), ('2', '2'), ('3', '3'), ('4', '4')], default='2', max_length=50),
+            model_name="booking",
+            name="num_tickets",
+            field=models.CharField(
+                choices=[("1", "1"), ("2", "2"), ("3", "3"), ("4", "4")],
+                default="2",
+                max_length=50,
+            ),
         ),
     ]

@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('events', '0009_rename_tickets_per_session_event_max_capacity'),
+        ("events", "0009_rename_tickets_per_session_event_max_capacity"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='event',
-            name='booked_tickets',
+            model_name="event",
+            name="booked_tickets",
             field=models.PositiveIntegerField(default=0),
         ),
     ]

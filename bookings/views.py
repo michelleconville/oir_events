@@ -1,6 +1,7 @@
 from django.views.generic import CreateView, ListView, DeleteView, UpdateView
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+
 # from django.shortcuts import render
 from django.urls import reverse_lazy
 
@@ -13,6 +14,7 @@ class CreateBooking(CreateView):
     """
     A view to create a new booking
     """
+
     template_name = "bookings/add_booking.html"
     model = Booking
     form_class = BookingForm
@@ -21,10 +23,7 @@ class CreateBooking(CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
 
-        messages.success(
-            self.request,
-            'Booking successfully created'
-        )
+        messages.success(self.request, "Booking successfully created")
         return super(CreateBooking, self).form_valid(form)
 
 
@@ -32,6 +31,7 @@ class UserBookings(LoginRequiredMixin, ListView):
     """
     A view to display a list of bookings made by the user
     """
+
     template_name = "bookings/user_bookings.html"
     context_object_name = "bookings"
 
@@ -43,6 +43,7 @@ class StaffBookings(LoginRequiredMixin, UserPassesTestMixin, ListView):
     """
     A view to display a list of all bookings
     """
+
     template_name = "bookings/staff_bookings.html"
     context_object_name = "bookings"
     model = Booking
@@ -55,6 +56,7 @@ class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
     A view to edit a booking
     """
+
     template_name = "bookings/edit_booking.html"
     model = Booking
     form_class = BookingForm
@@ -64,15 +66,13 @@ class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return self.request.user.is_staff
 
     def form_valid(self, form):
-        messages.success(
-            self.request,
-            'Booking successfully updated'
-        )
+        messages.success(self.request, "Booking successfully updated")
         return super().form_valid(form)
 
 
 class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """Delete an Event"""
+
     model = Booking
     success_url = "/events/"
 
@@ -80,8 +80,5 @@ class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return self.request.user.is_authenticated
 
     def delete(self, request, *args, **kwargs):
-        messages.success(
-            self.request,
-            'Booking successfully deleted'
-        )
+        messages.success(self.request, "Booking successfully deleted")
         return super().delete(request, *args, **kwargs)

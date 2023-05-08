@@ -11,6 +11,6 @@ class EventAdmin(admin.ModelAdmin):
         "active",
         "event_date",
         "tour_times",
-        "max_capacity"
+        "max_capacity",
     )
     list_filter = ("title",)

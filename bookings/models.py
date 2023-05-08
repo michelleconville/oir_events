@@ -9,11 +9,12 @@ class Booking(models.Model):
     """
     A model to create bookings, each user can book
     """
+
     user = models.ForeignKey(
         User, related_name="booking_owner", on_delete=models.CASCADE
     )
     title = models.ForeignKey(
-         Event, related_name="event_name", on_delete=models.CASCADE
+        Event, related_name="event_name", on_delete=models.CASCADE
     )
     num_tickets = models.PositiveIntegerField(default=1)
     booking_date = models.DateTimeField(auto_now_add=True)
@@ -21,8 +22,7 @@ class Booking(models.Model):
     max_capacity = Event.objects.filter()
 
     class Meta:
-
-        ordering = ['title']
+        ordering = ["title"]
 
     def __str__(self):
         return str(self.title)

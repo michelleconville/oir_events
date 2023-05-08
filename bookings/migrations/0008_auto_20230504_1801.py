@@ -4,19 +4,18 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('bookings', '0007_alter_booking_booking_date'),
+        ("bookings", "0007_alter_booking_booking_date"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='booking',
-            options={'ordering': ['user', 'title']},
+            name="booking",
+            options={"ordering": ["user", "title"]},
         ),
         migrations.RenameField(
-            model_name='booking',
-            old_name='ticket_number',
-            new_name='num_tickets',
+            model_name="booking",
+            old_name="ticket_number",
+            new_name="num_tickets",
         ),
     ]

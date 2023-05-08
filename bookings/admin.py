@@ -10,4 +10,8 @@ class BookingAdmin(admin.ModelAdmin):
         "num_tickets",
         "booking_date",
     )
-    list_filter = ("user", "title", "booking_date",)
+    list_filter = (
+        "user",
+        "title",
+        "booking_date",
+    )

@@ -7,16 +7,18 @@ from django.core.exceptions import ValidationError
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ['title', 'num_tickets',]
+        fields = [
+            "title",
+            "num_tickets",
+        ]
 
     def clean(self):
         """
         Check if there are enough tickets available for the event
         """
         cleaned_data = super().clean()
-        title = cleaned_data.get('title')
-        num_tickets = cleaned_data.get('num_tickets')
-        
+        title = cleaned_data.get("title")
+        num_tickets = cleaned_data.get("num_tickets")
 
         if title and num_tickets:
             # Check if there are enough tickets available
@@ -27,6 +29,6 @@ class BookingForm(forms.ModelForm):
 
             # Check if the number of tickets is greater than 4
             if int(num_tickets) > 4:
-                raise forms.ValidationError('Maximum of 4 tickets per booking')
+                raise forms.ValidationError("Maximum of 4 tickets per booking")
 
         return cleaned_data

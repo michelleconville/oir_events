@@ -17,7 +17,7 @@ class EventForm(forms.ModelForm):
             "image",
             "image_alt",
             "active",
-            "tour_times"
+            "tour_times",
         ]
 
         description = forms.CharField(widget=RichTextWidget())

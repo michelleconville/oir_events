@@ -4,9 +4,9 @@ from .models import CarouselImage
 
 
 class Index(TemplateView):
-    template_name = 'home/index.html'
+    template_name = "home/index.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['carousel_images'] = CarouselImage.objects.all()
+        context["carousel_images"] = CarouselImage.objects.all()
         return context

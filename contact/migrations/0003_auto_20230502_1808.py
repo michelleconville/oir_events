@@ -4,19 +4,18 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('contact', '0002_auto_20230501_2042'),
+        ("contact", "0002_auto_20230501_2042"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='contact',
-            old_name='first_name',
-            new_name='name',
+            model_name="contact",
+            old_name="first_name",
+            new_name="name",
         ),
         migrations.RemoveField(
-            model_name='contact',
-            name='last_name',
+            model_name="contact",
+            name="last_name",
         ),
     ]

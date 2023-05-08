@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('bookings', '0003_ticket'),
+        ("bookings", "0003_ticket"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='booking',
-            options={'ordering': ['user', 'event_name']},
+            name="booking",
+            options={"ordering": ["user", "event_name"]},
         ),
     ]

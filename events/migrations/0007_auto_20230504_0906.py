@@ -6,34 +6,86 @@ import multiselectfield.db.fields
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('events', '0006_alter_event_tour_times'),
+        ("events", "0006_alter_event_tour_times"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='BookingInfo',
+            name="BookingInfo",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('tour_times', multiselectfield.db.fields.MultiSelectField(choices=[('10:00', '10:00'), ('10:30', '10:30'), ('11:00', '11:00'), ('11:30', '11:30'), ('12:00', '12:00'), ('12:30', '12:30'), ('12:30', '12:30'), ('14:00', '14:00'), ('14:30', '14:30'), ('15:00', '15:00'), ('15:30', '15:30'), ('16:00', '16:00'), ('16:30', '16:30'), ('17:00', '17:00'), ('17:30', '17:30'), ('18:00', '18:00'), ('18:30', '18:30'), ('19:00', '19:00'), ('19:30', '19:30'), ('20:00', '20:00'), ('20:30', '20:30'), ('21:00', '21:00'), ('21:30', '21:30')], max_length=300)),
-                ('tickets_per_session', models.SmallIntegerField(choices=[(20, '20'), (25, '25'), (30, '30')], db_index=True, default='20')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "tour_times",
+                    multiselectfield.db.fields.MultiSelectField(
+                        choices=[
+                            ("10:00", "10:00"),
+                            ("10:30", "10:30"),
+                            ("11:00", "11:00"),
+                            ("11:30", "11:30"),
+                            ("12:00", "12:00"),
+                            ("12:30", "12:30"),
+                            ("12:30", "12:30"),
+                            ("14:00", "14:00"),
+                            ("14:30", "14:30"),
+                            ("15:00", "15:00"),
+                            ("15:30", "15:30"),
+                            ("16:00", "16:00"),
+                            ("16:30", "16:30"),
+                            ("17:00", "17:00"),
+                            ("17:30", "17:30"),
+                            ("18:00", "18:00"),
+                            ("18:30", "18:30"),
+                            ("19:00", "19:00"),
+                            ("19:30", "19:30"),
+                            ("20:00", "20:00"),
+                            ("20:30", "20:30"),
+                            ("21:00", "21:00"),
+                            ("21:30", "21:30"),
+                        ],
+                        max_length=300,
+                    ),
+                ),
+                (
+                    "tickets_per_session",
+                    models.SmallIntegerField(
+                        choices=[(20, "20"), (25, "25"), (30, "30")],
+                        db_index=True,
+                        default="20",
+                    ),
+                ),
             ],
             options={
-                'ordering': ['tour_times'],
+                "ordering": ["tour_times"],
             },
         ),
         migrations.RemoveField(
-            model_name='event',
-            name='tickets_per_session',
+            model_name="event",
+            name="tickets_per_session",
         ),
         migrations.RemoveField(
-            model_name='event',
-            name='tour_times',
+            model_name="event",
+            name="tour_times",
         ),
         migrations.AlterField(
-            model_name='event',
-            name='image',
-            field=django_resized.forms.ResizedImageField(crop=None, force_format='WEBP', keep_meta=True, quality=75, scale=None, size=[400, None], upload_to='events/'),
+            model_name="event",
+            name="image",
+            field=django_resized.forms.ResizedImageField(
+                crop=None,
+                force_format="WEBP",
+                keep_meta=True,
+                quality=75,
+                scale=None,
+                size=[400, None],
+                upload_to="events/",
+            ),
         ),
     ]
