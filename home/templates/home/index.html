@@ -8,10 +8,10 @@
     <div class="carousel-inner">
       {% for image in carousel_images %}
       <div class="carousel-item {% if forloop.first %}active{% endif %}">
-        <img src="{{ image.image.url }}" class="d-block w-100" alt="{{ image.caption }}">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>{{ image.caption }}</h5>
-          <a href="{{ image.cta_url }}" class="btn btn-primary">{{ image.cta_text }}</a>
+        <img src="{{ image.image.url }}" class="img-carousel d-block w-100" alt="{{ image.caption }}">
+        <div class="carousel-caption d-md-block">
+          <h1 class="d-none d-md-block img-des">{{ image.description }}</h1>
+          <a href="{{ image.cta_url }}" class="btn btn-success">{{ image.cta_text }}</a>
         </div>
       </div>
       {% endfor %}
@@ -27,9 +27,13 @@
   </div>
 </section>
 
+<!-- <section class="container">
+<h2 class="text-center pt-3">About us</h2>
+<p>The Houses of the Oireachtas regularly hosts events and exhibitions, and also offers the public an opportunity to visit Leinster House for a tour of the historic building. The Oireachtas Events site seeks to provide a single booking system for tickets to all Oireachtas events and tours.  </p>
+</section> -->
 
 <section class="container">
-    <h2 class="text-center">Visitor information</h2>
+    <h2 class="text-center pt-3">Visitor information</h2>
     <div class="accordion" id="accordionFlushExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id="flush-headingOne">
@@ -72,5 +76,6 @@
         </div>
       </div>
 </section>
+
 
 {% endblock %}

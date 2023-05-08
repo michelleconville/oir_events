@@ -220,4 +220,17 @@ table {
         display: inline-block;
         margin-right: 5px;
       } 
+
 }
+
+  .carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
+  .img-des {
+    background-color: rgba(148, 105, 141, 0.479);
+  }

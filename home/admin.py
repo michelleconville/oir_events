@@ -6,7 +6,10 @@ from .models import CarouselImage
 class CarouselImageAdmin(admin.ModelAdmin):
     list_display = (
         "image",
-        "caption"
+        "caption",
+        "cta_text",
+        "cta_url",
+        "description"
 
     )
     list_filter = ("caption",)
