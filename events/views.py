@@ -41,6 +41,9 @@ class EventDetail(DetailView):
     def test_func(self):
         return self.request.user.is_staff
 
+    def get_queryset(self):
+        return Event.objects.annotate(num_likes=models.Count('likes'))
+
 
 class AddEvent(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     """AddEvent view to create an event if the user is staff"""

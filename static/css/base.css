@@ -167,3 +167,19 @@ table {
     }
 
 }
+
+.accordion-button.collapsed {
+    background-color: #11501d;
+    color: #ffffff;
+    box-shadow: var(--dark-green);
+
+}
+.accordion-button:not(.collapsed) {
+    background-color: #11501d;
+    color: #ffffff;
+    box-shadow: var(--dark-green);
+}
+
+.accordion-button {
+    background-color: white;
+}
