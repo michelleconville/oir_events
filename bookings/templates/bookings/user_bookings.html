@@ -37,6 +37,9 @@
                 <td>
                     <a href="{% url 'delete_booking' booking.id %}" class="btn btn-success">Delete</a>
                 </td>
+                {% empty %}
+                <td class="text-white fs-6 empty-state">You have not booked any tickets
+                </td>
             </tr>
         </tbody>
         {% endfor %}

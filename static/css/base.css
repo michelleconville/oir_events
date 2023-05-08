@@ -139,6 +139,9 @@ table {
     box-shadow: var(--smal-box-shadow);
 }
     
+.empty-state {
+    border-bottom: none;
+}
 
 
 @media(max-width:767px){
@@ -167,6 +170,11 @@ table {
     }
 
 }
+/* 
+.button.accordion-button::after, .button.accordion-button.collapsed::after {
+    color: var(--pink) !important
+} */
+
 
 .accordion-button.collapsed {
     background-color: #11501d;
@@ -180,6 +188,3 @@ table {
     box-shadow: var(--dark-green);
 }
 
-.accordion-button {
-    background-color: white;
-}
