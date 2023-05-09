@@ -18,14 +18,16 @@
                 <div>
                     <strong>Tour times:</strong><p>{{event.tour_times}}</p>
                 </div>
-                <a href="#" class="btn btn-success w-15">Book</a>
+                <a href="{% url 'create_booking' %}" class="btn btn-success w-15">Book</a>
             </div>
         </div>
+        <hr>
         {% if request.user == event.user %} 
         <div class="text-center">
             <a href="{% url 'edit_event' event.id %}" class="btn btn-success w-25">Edit</a>
             <a href="{% url 'delete_event' event.id %}" class="btn btn-success w-25">Delete</a>
         </div>
+        <hr>
         {% endif %}
         <h2 class="pt-4">About this event</h2>
         <p>{{event.description|safe}}</p>
