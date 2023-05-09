@@ -13,6 +13,7 @@ django-multiselectfield==0.1.12
 django-resized==1.0.2
 django-richtextfield==1.6.1
 django-select-multiple-field==0.4.2
+gunicorn==20.1.0
 image==1.5.33
 oauthlib==3.2.2
 pathspec==0.11.1
