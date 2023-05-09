@@ -18,7 +18,6 @@ class BookingForm(forms.ModelForm):
             'num_tickets': 'Number of tickets ',
 
         }
-        
 
     def clean(self):
         """
