@@ -7,7 +7,7 @@
         <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}"
                 alt="Houses of the Oireachtas Logo" class="logo"></a>
         <button class="navbar-toggler me-5 text-white" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbar-collapse" aria-controls="navbarDropdown" aria-expanded="false"
+            data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false"
             aria-label="Toggle navigation">
             <i class='bx bx-menu bx-md'></i>
         </button>
@@ -34,7 +34,7 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Bookings
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="bookings-dropdown">
+                    <ul class="dropdown-menu" aria-labelledby="bookings-dropdown" aria-controls="dropdown-menu">
                         <li><a class="dropdown-item text-white" aria-current="page" href="{% url 'user_bookings' %}">Manage
                             Bookings</a></li>
                         <li><a class="dropdown-item text-white" aria-current="page" href="{% url 'create_booking' %}">New
