@@ -13,6 +13,13 @@ class BookingForm(forms.ModelForm):
             "num_tickets",
         ]
 
+        labels = {
+            'title': 'Select an event ',
+            'num_tickets': 'Number of tickets ',
+
+        }
+        
+
     def clean(self):
         """
         Check if there are enough tickets available for the event.
