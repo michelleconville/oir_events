@@ -39,3 +39,9 @@ class BookingForm(forms.ModelForm):
                 raise forms.ValidationError("Maximum of 4 tickets per booking")
 
         return cleaned_data
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        # Update the queryset for the 'title' field to only include active events
+        self.fields['title'].queryset = Event.objects.filter(active=True)
