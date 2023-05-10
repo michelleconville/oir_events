@@ -34,9 +34,6 @@ class EventDetail(DetailView):
     model = Event
     context_object_name = "event"
 
-    # def get_queryset(self):
-    #     return Event.objects.filter(active=True)
-
     def get_queryset(self):
         return Event.objects.all()
 
