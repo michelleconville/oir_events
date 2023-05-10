@@ -40,6 +40,10 @@ main {
     background-color: var(--grey);
 }
 
+hr {
+    color: var(--pink);
+}
+
 /* footer */
 footer {
     flex-shrink: 0;

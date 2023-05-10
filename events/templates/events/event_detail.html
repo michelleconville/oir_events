@@ -10,15 +10,13 @@
             <div class="col-12 col-lg-5 event-img">
                 <img src="{{ event.image.url }}" alt="{{ event.image_alt }}" class="event-pic">
             </div>
-            <div class="col-12 col-lg-7 event-detail">
+            <div class="col-12 col-lg-7 event-detail text-left">
                 <h1>{{ event.title }}</h1>
-                <div>
-                    <strong>Date of event:</strong><p>{{event.event_date}} </p>
+                <div class="text text-left">
+                <strong class="px-2">Date of event:</strong>{{event.event_date}} <strong class="px-2">Tour times:</strong>{{event.tour_times}}
                 </div>
-                <div>
-                    <strong>Tour times:</strong><p>{{event.tour_times}}</p>
-                </div>
-                <a href="{% url 'create_booking' %}" class="btn btn-success w-15">Book</a>
+                <div><p class="pt-3">{{event.summary}}</p></div>
+                <a href="{% url 'create_booking' %}" class="btn btn-success w-15">Book now!</a>
             </div>
         </div>
         <hr>
@@ -29,9 +27,10 @@
         </div>
         <hr>
         {% endif %}
-        <h2 class="pt-4">About this event</h2>
+        <h2 class="pt-2">About this event</h2>
         <p>{{event.description|safe}}</p>
-        <h3 class="pt-4">What else to know?</h3>
-        <p>Read our FAQs or find our location</p>
+        <hr>
+        <h3 class="pt-2">What else to know?</h3>
+        <p>Read our <a href="https://8000-michelleconvi-oirevents-jyn6wo5o4bv.ws-eu96b.gitpod.io/#visitor-info">visitor information</a> to find out more about what you should bring or if you are unsure of how to get to Leister house</p>
     </div>
 {% endblock %}
