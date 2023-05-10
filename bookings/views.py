@@ -28,6 +28,10 @@ class CreateBooking(LoginRequiredMixin, CreateView):
             messages.error(self.request, "Maximum capacity reached for this event")
             return redirect('/events/add_booking.html')
 
+        get_event = Event.objects.get(title=event)
+        get_event.booked_tickets = get_event.booked_tickets + num_tickets
+        get_event.save()
+
         messages.success(self.request, "Booking successfully created")
         return super().form_valid(form)
 

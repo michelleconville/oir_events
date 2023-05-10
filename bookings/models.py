@@ -13,7 +13,6 @@ class Booking(models.Model):
         )
     num_tickets = models.PositiveIntegerField(default=1)
     booking_date = models.DateTimeField(auto_now_add=True)
-    # active = models.BooleanField(default=True, null=True)
 
     def max_capacity(self):
         return self.title.max_capacity
