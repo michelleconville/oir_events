@@ -65,7 +65,7 @@ class AddEvent(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 class EditEvent(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """Edit an Event"""
 
-    template_name = "events/add_event.html"
+    template_name = "events/edit_event.html"
     model = Event
     form_class = EventForm
     success_url = "/events/"
