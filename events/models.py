@@ -42,8 +42,9 @@ class Event(models.Model):
     """
     A model to create and manage events
     """
-
-    user = models.ForeignKey(User, related_name="event_owner", on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User, related_name="event_owner", on_delete=models.CASCADE
+        )
     title = models.CharField(max_length=300, null=False, blank=False)
     summary = models.CharField(max_length=300, null=False, blank=False)
     description = RichTextField(max_length=10000, null=False, blank=False)
@@ -58,22 +59,17 @@ class Event(models.Model):
     image_alt = models.CharField(max_length=100, null=False, blank=False)
     active = models.BooleanField(default=False)
     posted_date = models.DateTimeField(auto_now=True)
-    likes = models.ManyToManyField(User, related_name="event_likes", blank=True)
+    event_date = models.DateField(blank=True, null=True)
     max_capacity = models.SmallIntegerField(
         choices=GROUP_SIZE, default="20", db_index=True
-    )
-    event_date = models.DateField(blank=True, null=True)
-    # tour_times = MultiSelectField(
-    #     max_length=300,
-    #     choices=TOUR_TIMES, default="10:00"
-    # )
-
-    tour_times = models.CharField(max_length=50, choices=TOUR_TIMES, default="10:00")
-
+        )
+    tour_times = models.CharField(
+        max_length=50, choices=TOUR_TIMES, default="10:00"
+        )
     booked_tickets = models.PositiveIntegerField(default=0)
 
     def current_bookings(self):
-        return self.booking_set.count()
+        return self.booked_tickets
 
     class Meta:
         ordering = ["-posted_date"]

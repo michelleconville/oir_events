@@ -1,6 +1,8 @@
 from django.views.generic import CreateView, ListView, DeleteView, UpdateView
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.shortcuts import redirect
+
 
 # from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -23,8 +25,15 @@ class CreateBooking(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
 
+        event = form.cleaned_data['title']
+        num_tickets = form.cleaned_data['num_tickets']
+
+        if num_tickets > event.available_tickets() or num_tickets + event.booked_tickets > event.max_capacity:
+            messages.error(self.request, "Maximum capacity reached for this event")
+            return redirect('/events/add_booking.html')
+
         messages.success(self.request, "Booking successfully created")
-        return super(CreateBooking, self).form_valid(form)
+        return super().form_valid(form)
 
 
 class UserBookings(LoginRequiredMixin, ListView):
