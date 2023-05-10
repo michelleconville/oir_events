@@ -5,7 +5,7 @@
 {% block content %} 
 <div>
     <h1 class="text-center">Bookings List</h1>
-    <!-- <p class="text-center"><em>Please note: This list will only show tickets for upcoming events</em></p> -->
+    <p class="text-center"><em>Please note: This list will only show tickets for upcoming events</em></p>
     <table class="table table-striped table-hover text-white container">
         <thead>
             <tr>
@@ -18,6 +18,7 @@
             </tr>
         </thead>
         {% for booking in object_list %}
+        {% if booking.title.active %}
         <tbody>
             <tr>
                 <td class="text-white fs-6">
@@ -38,6 +39,7 @@
                 <td>
                     <a href="{% url 'delete_booking' booking.id %}" class="btn btn-success">Delete</a>
                 </td>
+                {% endif %}
                 {% empty %}
                 <td class="text-white fs-6 empty-state">You have not booked any tickets
                 </td>
