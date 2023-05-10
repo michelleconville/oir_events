@@ -28,7 +28,6 @@ class CreateBooking(LoginRequiredMixin, CreateView):
             messages.error(self.request, "Maximum capacity reached for this event")
             return redirect('/events/add_booking.html')
 
-        # Increase the number of booked tickets for the event
         get_event = Event.objects.get(title=event)
         get_event.booked_tickets = get_event.booked_tickets + num_tickets
         get_event.save()
@@ -76,6 +75,17 @@ class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return self.request.user.is_staff
 
     def form_valid(self, form):
+        old_booking = self.get_object()
+        new_booking = form.save(commit=False)
+
+        num_tickets_diff = new_booking.num_tickets - old_booking.num_tickets
+
+        if num_tickets_diff != 0:
+            event = new_booking.title
+
+            event.booked_tickets += num_tickets_diff
+            event.save()
+
         messages.success(self.request, "Booking successfully updated")
         return super().form_valid(form)
 
