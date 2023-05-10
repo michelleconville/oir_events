@@ -26,3 +26,8 @@ class EventForm(forms.ModelForm):
             "description": forms.Textarea(attrs={"rows": 10}),
             "event_date": forms.DateInput(attrs={"type": "date"}),
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields["event_date"].widget.attrs["type"] = "date"

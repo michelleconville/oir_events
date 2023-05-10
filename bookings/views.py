@@ -47,9 +47,6 @@ class UserBookings(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Booking.objects.filter(user=self.request.user)
 
-    # def get_queryset(self):
-    #     return Event.objects.filter(active=True)
-
 
 class StaffBookings(LoginRequiredMixin, UserPassesTestMixin, ListView):
     """
