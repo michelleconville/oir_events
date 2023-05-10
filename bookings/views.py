@@ -2,9 +2,6 @@ from django.views.generic import CreateView, ListView, DeleteView, UpdateView
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import redirect
-
-
-# from django.shortcuts import render
 from django.urls import reverse_lazy
 
 from events.models import Event
@@ -16,7 +13,6 @@ class CreateBooking(LoginRequiredMixin, CreateView):
     """
     A view to create a new booking
     """
-
     template_name = "bookings/add_booking.html"
     model = Booking
     form_class = BookingForm
