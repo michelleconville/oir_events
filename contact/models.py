@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Contact(models.Model):
-    name = models.CharField(max_length=254, null=True, blank=True)
+    name = models.CharField(max_length=254, null=True, blank=False)
     email = models.EmailField(max_length=254, unique=True)
     message = models.TextField()
     posted_date = models.DateTimeField(auto_now=True)

@@ -149,15 +149,13 @@ table {
 
 
 .accordion-button.collapsed {
-    background-color: #11501d;
+    background-color: var(--dark-green);
     color: #ffffff;
-    box-shadow: var(--dark-green);
-
 }
+
 .accordion-button:not(.collapsed) {
     background-color: #11501d;
     color: #ffffff;
-    box-shadow: var(--dark-green);
 }
 
 
