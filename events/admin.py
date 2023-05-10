@@ -6,11 +6,11 @@ from .models import Event
 class EventAdmin(admin.ModelAdmin):
     list_display = (
         "title",
-        "summary",
-        "image",
         "active",
         "event_date",
         "tour_times",
         "max_capacity",
+        "booked_tickets",
+        "image",
     )
     list_filter = ("title",)
