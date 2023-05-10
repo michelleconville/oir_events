@@ -28,6 +28,7 @@ class CreateBooking(LoginRequiredMixin, CreateView):
             messages.error(self.request, "Maximum capacity reached for this event")
             return redirect('/events/add_booking.html')
 
+        # Increase the number of booked tickets for the event
         get_event = Event.objects.get(title=event)
         get_event.booked_tickets = get_event.booked_tickets + num_tickets
         get_event.save()
@@ -80,7 +81,7 @@ class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-    """Delete an Event"""
+    """Delete a Booking"""
 
     model = Booking
     success_url = "/events/"
@@ -89,5 +90,10 @@ class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return self.request.user.is_authenticated
 
     def delete(self, request, *args, **kwargs):
+        booking = self.get_object()
+        event = booking.title
+        event.booked_tickets -= booking.num_tickets
+        event.save()
+
         messages.success(self.request, "Booking successfully deleted")
         return super().delete(request, *args, **kwargs)
