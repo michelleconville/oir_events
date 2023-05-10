@@ -21,6 +21,14 @@ class Booking(models.Model):
 
     max_capacity = Event.objects.filter()
 
+    booking_date = models.DateTimeField(auto_now_add=True)
+
+    def max_capacity(self):
+        return self.title.max_capacity
+
+    def event_date(self):
+        return self.title.event_date
+
     class Meta:
         ordering = ["title"]
 
