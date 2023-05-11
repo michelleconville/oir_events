@@ -133,3 +133,18 @@ The home page contains a carrousel of images taken in Leinster House. These imag
 
 The second part of the home page is visitor information, this information is displayed in an accordion module. This will give users information on, where to find Leinster House and what gate to use, via both a text description and a map, the items that them will need to bring with them and how to book tickets if it is there first visit to the website. 
 
+#### Events pages
+
+*       USER STORY As a site user, I want to be able to find information on all Oireachtas tours so that I can decide if I want to book tickets
+
+**Events pages (List view of all events)**
+
+The events page contains a list of upcoming events that taking place in Leinster House, the events are displayed on cards, have an image, the name of the event and the short description, event card is clickable and will take the user to the detailed event page.
+
+If there are no events currently scheduled to take place a message will display for the user to notify them of that. 
+
+**Event page (Detailed event page)**
+
+Each event has its own page, that contains three sections, the first has an image relating to the event, the event title, the date, the tour time, a short description and a book now button.  The second section is About this event, this gives more information about the upcoming event and the third is the What else to know section, this redirection the user to the visitor information.  
+
+The first and second sections are unique to the event itself, this information will help the user decide if they would like to attend the event and give them the option to book a ticket. The third section is an quick way for the user to find the visitor information. 
