@@ -72,13 +72,13 @@ Epic 5 Additional pages
 * As a developer, I need to implement a 404-error page to alert users when they have accessed a page that doesn't exist
 * As a developer, I need to implement a 500-error page to alert users when an internal server error occurs
 * As a developer, I need to implement a 403-error page to redirect unauthorised users to, so that I can secure my views
-* As a site owner, I would like a home page so that customers can view information on my website
+* As a site owner, I would like a home page so that users can view information on my website
 * As a site user, I want to read frequently asked questions so that I can find information on events
 * As a site user, I want to access information on how to find Leinster House, so I arrive at the correct entrance
 
 EPIC 6 - Deployment Epic
 
-* As a developer, I need to deploy the project to heroku so that it is live for customers
+* As a developer, I need to deploy the project to heroku so that it is live for users
 
 EPIC 7 – Documentation
 
@@ -90,7 +90,7 @@ EPIC 7 – Documentation
 
 #### Navigation Menu
 
-*       USER STORY - As a developer, I need to create the navbar so that users can navigate the website
+*       USER STORY: As a developer, I need to create the navbar so that users can navigate the website
 
 The initial navigation menu contain links to the Home, Events, Contact, Register, Login pages. The navigation menu is displayed on all pages and changes into a hamburger menu on smaller devices. This will allow users to view the site from any device.
 
@@ -119,7 +119,7 @@ If a staff user chooses to register and/or login, the following navigation optio
 
 #### Footer 
 
-*       USER STORY - As a developer I need to create the footer with social media links and contact information so this information can be found on any page on the website
+*       USER STORY: As a developer I need to create the footer with social media links and contact information so this information can be found on any page on the website
 
 A footer has been added to the bottom of the site, this contains social media link to Twitter, Facebook, YouTube, and LinkedIn so that users can follow the Oireachtas on our social media channels, to both here about upcoming events and the work of the Houses of the Oireachtas if that interests them. 
 
@@ -127,7 +127,7 @@ These icons have aria-labels added to ensure users with assistive screen reading
 
 #### Homepage
 
-*       USER STORY - As a site owner, I would like a home page so that users can view information on my website
+*       USER STORY: As a site owner, I would like a home page so that users can view information on my website
 
 The home page contains a carrousel of images taken in Leinster House. These images will have a call-to-action button on them, to either book an event or view all events. These buttons give the user a quick way to get to the events page or the booking page. The carrousel images can be replaced at any time using the backend admin panel.
 
@@ -135,7 +135,7 @@ The second part of the home page is visitor information, this information is dis
 
 #### Events pages
 
-*       USER STORY As a site user, I want to be able to find information on all Oireachtas tours so that I can decide if I want to book tickets
+*       USER STORY: As a site user, I want to be able to find information on all Oireachtas tours so that I can decide if I want to book tickets
 
 **Events pages (List view of all events)**
 
@@ -148,3 +148,24 @@ If there are no events currently scheduled to take place a message will display 
 Each event has its own page, that contains three sections, the first has an image relating to the event, the event title, the date, the tour time, a short description and a book now button.  The second section is About this event, this gives more information about the upcoming event and the third is the What else to know section, this redirection the user to the visitor information.  
 
 The first and second sections are unique to the event itself, this information will help the user decide if they would like to attend the event and give them the option to book a ticket. The third section is an quick way for the user to find the visitor information. 
+
+**Create event page**
+
+*       USER STORY - As a staff member, I want to create events so I can allow bookings
+
+A create event page was implemented to allow staff users to create new events via the UI without having to use the backend admin panel. For staff and admin users only, a button “Add” will display in the navigation menu.
+
+This will allow staff the ability to create an event and publish it to the website from a single page, this will create the Event page and will display an event card on the Events page. 
+
+**Edit event page**
+
+*       USER STORY - As a staff member, I want to be able to edit events
+
+On the event page, an edit button displays for staff and admin users only, this allows staff to easily edit any of the details or make the page inactive if they no longer want to display to the website, this will not delete the event. 
+
+**Delete event page**
+
+*       USER STORY - As a staff member, I want to be able to delete events if they are no longer going ahead or are over
+
+On the event page, a delete button displays for staff and admin users only, this allows staff to delete an event, once the button is selected, they will be taken to a confirmation page to confirm that they do want to delete the event. 
+
