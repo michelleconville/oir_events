@@ -30,7 +30,7 @@ The site will offer users information on all Oireachtas events, exhibitions and 
 
 This project was developed using agile methodologies by delivering features in sprints. There were 3 sprints in total, the work was carried out over four weeks.
 
-Initially user stories were developed, and a full set of acceptance criteria was created in order to define the functionality of the required feature, these user stories were assigned to epics, prioritised under the labels, ‘Must have’, ‘Should have’, and ‘Could have’. Then they were assigned to sprints and story pointed, according to complexity. "Must have" stories were completed first, "should haves" and then finally "could haves". It was done this way to ensure that all core requirements were completed first to give the project a complete feel, with the nice to have features being added should there be capacity.
+Initially user stories were developed, and a full set of acceptance criteria was created in order to define the functionality of the required feature, these user stories were assigned to epics (milstones), prioritised under the labels, ‘Must have’, ‘Should have’, and ‘Could have’. Then they were assigned to sprints and story pointed, according to complexity. "Must have" stories were completed first, "should haves" and then finally "could haves". It was done this way to ensure that all core requirements were completed first to give the project a complete feel, with the nice to have features being added should there be capacity.
 
 In GitHub projects, a Kanban board was used to track the progress of the project, the workflow started with To do then In Progress, Done and finally Closed, were the item was marked as closed. 
 
@@ -84,6 +84,52 @@ EPIC 7 – Documentation
 
 * Complete readme documentation 
 
+## The structure
 
+### Features
 
+#### Navigation Menu
+
+*       USER STORY - As a developer, I need to create the navbar so that users can navigate the website
+
+The initial navigation menu contain links to the Home, Events, Contact, Register, Login pages. The navigation menu is displayed on all pages and changes into a hamburger menu on smaller devices. This will allow users to view the site from any device.
+
+The navigation changes depending on whether the user is an end user or a staff user. 
+
+If an end user chooses to register and/or login, the following navigation options are available:
+
+* Home 
+* Events -> detailed event page
+* Bookings (Drop Down):
+    * Manage Bookings (user booking only)
+    * New Booking
+* Contact
+* Logout
+
+If a staff user chooses to register and/or login, the following navigation options are available:
+
+* Home 
+* Events -> detailed event page
+* Add (to add an event)
+* Bookings (Drop Down):
+    * Manage Bookings (All booking)
+    * New Booking
+* Contact
+* Logout
+
+#### Footer 
+
+*       USER STORY - As a developer I need to create the footer with social media links and contact information so this information can be found on any page on the website
+
+A footer has been added to the bottom of the site, this contains social media link to Twitter, Facebook, YouTube, and LinkedIn so that users can follow the Oireachtas on our social media channels, to both here about upcoming events and the work of the Houses of the Oireachtas if that interests them. 
+
+These icons have aria-labels added to ensure users with assistive screen reading technology know what the purpose of the links are for. They also open in new tabs as they lead users away from the site.
+
+#### Homepage
+
+*       USER STORY - As a site owner, I would like a home page so that users can view information on my website
+
+The home page contains a carrousel of images taken in Leinster House. These images will have a call-to-action button on them, to either book an event or view all events. These buttons give the user a quick way to get to the events page or the booking page. The carrousel images can be replaced at any time using the backend admin panel.
+
+The second part of the home page is visitor information, this information is displayed in an accordion module. This will give users information on, where to find Leinster House and what gate to use, via both a text description and a map, the items that them will need to bring with them and how to book tickets if it is there first visit to the website. 
 
