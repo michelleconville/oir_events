@@ -8,8 +8,6 @@ from django.views.generic import (
 
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
-from django.contrib.auth.mixins import LoginRequiredMixin
-
 from django.contrib import messages
 
 from .models import Event

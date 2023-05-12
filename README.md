@@ -43,7 +43,7 @@ EPIC 1 - Initial Setup
 * As a developer, I need to set up the project so that it is ready for implementing the core features
 * As a developer, I need to create static resources so that images and CSS work on the website
 * As a developer, I need to create the navbar so that users can navigate the website
-* As a developer I need to create the footer with social media links and contact information so this information can be found on any page on the website
+* As a developer I need to create the footer with social media links so this information can be found on any page on the website
 * As a developer, I need to create the base.html page and structure so that other pages can reuse the layout
 
 EPIC 2 - Authentication Epic 
@@ -119,9 +119,9 @@ If a staff user chooses to register and/or login, the following navigation optio
 
 #### Footer 
 
-*       USER STORY: As a developer I need to create the footer with social media links and contact information so this information can be found on any page on the website
+*       USER STORY: As a developer I need to create the footer with social media links so this information can be found on any page on the website
 
-A footer has been added to the bottom of the site, this contains social media link to Twitter, Facebook, YouTube, and LinkedIn so that users can follow the Oireachtas on our social media channels, to both here about upcoming events and the work of the Houses of the Oireachtas if that interests them. 
+A footer has been added to the bottom of the site, this contains social media links to Twitter, Facebook, YouTube, and LinkedIn so that users can follow the Oireachtas on our social media channels, so they can find our more about upcoming events and the work of the Houses of the Oireachtas if that interests them. 
 
 These icons have aria-labels added to ensure users with assistive screen reading technology know what the purpose of the links are for. They also open in new tabs as they lead users away from the site.
 
