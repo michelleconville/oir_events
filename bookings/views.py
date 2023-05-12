@@ -111,3 +111,34 @@ class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
         messages.success(self.request, "Booking successfully deleted")
         return super().delete(request, *args, **kwargs)
+
+
+class BookingOverview(LoginRequiredMixin, ListView):
+    """
+    A view to display a list of events with information about
+    active events, event date, tour time, max capacity, and booked tickets
+    """
+    template_name = 'bookings/booking_overview.html'
+    context_object_name = 'events'
+    model = Event
+
+    def get_queryset(self):
+        return self.model.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        event_list = []
+        for event in context['events']:
+            # Check if the event is active
+            if event.active:
+                # Create a dictionary with information about the event
+                event_dict = {
+                    'title': event.title,
+                    'event_date': event.event_date,
+                    'tour_time': event.tour_times,
+                    'max_capacity': event.max_capacity,
+                    'booked_tickets': event.booked_tickets,
+                }
+                event_list.append(event_dict)
+        context['event_list'] = event_list
+        return context

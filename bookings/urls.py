@@ -5,6 +5,7 @@ from .views import (
     StaffBookings,
     EditBooking,
     DeleteBooking,
+    BookingOverview,
 )
 
 
@@ -14,4 +15,5 @@ urlpatterns = [
     path("staff_bookings/", StaffBookings.as_view(), name="staff_bookings"),
     path("bookings/<int:pk>/edit/", EditBooking.as_view(), name="edit_booking"),
     path("bookings/<int:pk>/delete/", DeleteBooking.as_view(), name="delete_booking"),
+    path('booking_overview/', BookingOverview.as_view(), name='booking_overview'),
 ]
