@@ -32,7 +32,7 @@
                 {% if user.is_staff %}
                 <li class="nav-item">
                     <a class="nav-link mx-3 text-white fs-6 {% if url_name == 'add_event' %}active{% endif %}"
-                        href="{% url 'add_event' %}">Add</a>
+                        href="{% url 'add_event' %}">Add Event</a>
                 </li>
                 {% endif %}
                 {% if request.user.is_authenticated and not request.user.is_staff %}
