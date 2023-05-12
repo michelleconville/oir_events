@@ -59,7 +59,7 @@ class Event(models.Model):
     image_alt = models.CharField(max_length=100, null=False, blank=False)
     active = models.BooleanField(default=False)
     posted_date = models.DateTimeField(auto_now=True)
-    event_date = models.DateField(blank=True, null=True)
+    event_date = models.DateField(blank=False, null=True)
     max_capacity = models.SmallIntegerField(
         choices=GROUP_SIZE, default="20", db_index=True
         )
