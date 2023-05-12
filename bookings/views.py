@@ -113,7 +113,7 @@ class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return super().delete(request, *args, **kwargs)
 
 
-class BookingOverview(LoginRequiredMixin, ListView):
+class BookingOverview(LoginRequiredMixin, UserPassesTestMixin, ListView):
     """
     A view to display a list of events with information about
     active events, event date, tour time, max capacity, and booked tickets
@@ -121,6 +121,9 @@ class BookingOverview(LoginRequiredMixin, ListView):
     template_name = 'bookings/booking_overview.html'
     context_object_name = 'events'
     model = Event
+
+    def test_func(self):
+        return self.request.user.is_staff
 
     def get_queryset(self):
         return self.model.objects.all()

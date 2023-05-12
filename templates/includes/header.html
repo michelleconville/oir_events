@@ -42,11 +42,12 @@
                         Bookings
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="bookings-dropdown" aria-controls="dropdown-menu">
-                        <li><a class="dropdown-item text-white" aria-current="page" href="{% url 'user_bookings' %}">Manage
-                            Bookings</a></li>
-                        <li><a class="dropdown-item text-white" aria-current="page" href="{% url 'create_booking' %}">New
-                            Booking</a></li>
-                    
+                        <li><a class="dropdown-item text-white" aria-current="page"
+                                href="{% url 'user_bookings' %}">Manage
+                                Bookings</a></li>
+                        <li><a class="dropdown-item text-white" aria-current="page"
+                                href="{% url 'create_booking' %}">New
+                                Booking</a></li>
                     </ul>
                 </li>
                 {% endif %}
@@ -57,9 +58,14 @@
                         Bookings
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="bookings-dropdown">
-                        <li><a class="dropdown-item text-white" aria-current="page" href="{% url 'staff_bookings' %}">Manage
+                        <li><a class="dropdown-item text-white" aria-current="page"
+                                href="{% url 'staff_bookings' %}">Manage
                                 Bookings</a></li>
-                        <li><a class="dropdown-item text-white" aria-current="page" href="{% url 'create_booking' %}">New
+                        <li><a class="dropdown-item text-white" aria-current="page"
+                                href="{% url 'booking_overview' %}">Booking
+                                Overview</a></li>
+                        <li><a class="dropdown-item text-white" aria-current="page"
+                                href="{% url 'create_booking' %}">New
                                 Booking</a></li>
                     </ul>
                 </li>
