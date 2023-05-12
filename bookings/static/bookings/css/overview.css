@@ -1,0 +1,54 @@
+@media screen and (max-width: 576px) {
+    /* Force table to not be like tables anymore */
+table, thead, tbody, th, td, tr { 
+    display: block;
+}
+
+tbody {
+    margin-top: 20px;
+}
+
+/* Hide table headers */
+thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+tr { 
+    border: 1px solid var(--white); 
+}
+
+td { 
+    /* Behave  like a "row" */
+    border: none;
+    position: relative;
+    padding-left: 50%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 64px;
+}
+
+td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    margin-left: 3px;
+    padding-right: 10px; 
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+/*
+Label for booking items
+*/
+td:nth-of-type(1):before { content: "Event Name"; }
+td:nth-of-type(2):before { content: "Date of Event"; }
+td:nth-of-type(3):before { content: "Tour Time"; }
+td:nth-of-type(4):before { content: "Max capacity"; }
+td:nth-of-type(5):before { content: "Booked Tickets"; }
+}
