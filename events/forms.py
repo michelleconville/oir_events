@@ -21,7 +21,7 @@ class EventForm(forms.ModelForm):
         ]
 
         labels = {
-            'title': 'Event title',
+            "title": "Event title",
             "summary": "Short description",
             "event_date": "Date of event",
             "max_capacity": "Tour size",
@@ -29,7 +29,7 @@ class EventForm(forms.ModelForm):
             "image": "image",
             "image_alt": "Alt text",
             "tour_times": "Tour time",
-            "active": "Publish event (Optional)"
+            "active": "Publish event (Optional)",
         }
 
         widgets = {

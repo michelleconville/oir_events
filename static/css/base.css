@@ -20,7 +20,7 @@
     --border: 1px solid #00000030;
 }
 
-
+/* Generic styles */
 html, body {
     height: 100%;
 }
@@ -60,12 +60,11 @@ footer {
     margin: 1rem;
 }
 
-
+/* header */
 .bg {
     background-color: var(--dark-green);
 }
 
-/* header */
 .navbar {
     padding: 0;
     box-shadow: var(--smal-box-shadow);
@@ -93,7 +92,6 @@ ul.dropdown-menu.show {
 }
 
 /* Form */
-
 .form {
     width: 100%;
     margin: 4% auto;
@@ -145,13 +143,7 @@ table {
     border-bottom: none;
 }
 
-
-/* 
-.button.accordion-button::after, .button.accordion-button.collapsed::after {
-    color: var(--pink) !important
-} */
-
-
+/* Carousel (homepage) */
 .accordion-button.collapsed {
     background-color: var(--dark-green);
     color: var(--white);
@@ -161,7 +153,6 @@ table {
     background-color: var(--dark-green);
     color: var(--white);
 }
-
 
 .carousel-caption {
     position: absolute;
@@ -179,6 +170,7 @@ table {
     z-index: 1;
 }
 
+
 @media screen and (max-width: 576px) {
     	/* Force table to not be like tables anymore */
 	table, thead, tbody, th, td, tr { 
@@ -189,14 +181,16 @@ table {
         margin-top: 20px;
     }
 	
-	/* Hide table headers (but not display: none;, for accessibility) */
+	/* Hide table headers */
 	thead tr { 
 		position: absolute;
 		top: -9999px;
 		left: -9999px;
 	}
 	
-	tr { border: 1px solid var(--white); }
+	tr { 
+        border: 1px solid var(--white); 
+    }
 	
 	td { 
 		/* Behave  like a "row" */
@@ -223,17 +217,18 @@ table {
 	}
 	
 	/*
-	Label the data
+	Label for booking items
 	*/
 	td:nth-of-type(1):before { content: "Booking Reference"; }
-	td:nth-of-type(2):before { content: "Name of event"; }
-	td:nth-of-type(3):before { content: "Date of event"; }
+	td:nth-of-type(2):before { content: "Name of Event"; }
+	td:nth-of-type(3):before { content: "Date of Event"; }
 	td:nth-of-type(4):before { content: "Name on booking"; }
     td:nth-of-type(5):before { content: "No of tickets"; }
 }
 
 
 @media(max-width:767px){
+    /* Change the colour of the navbar */
     .ul-bg {
         background-color: var(--green);
     }
@@ -250,6 +245,7 @@ table {
 }
 
 @media(max-width:599px){
+     /* Remove image in smaller screens - event page */
     .event-img {
         display: none;
     }
@@ -257,5 +253,4 @@ table {
     .active {
         border-bottom: none;
     }
-
 }

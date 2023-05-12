@@ -7,10 +7,10 @@ from django.core.exceptions import ValidationError
 class Booking(models.Model):
     user = models.ForeignKey(
         User, related_name="booking_owner", on_delete=models.CASCADE
-        )
+    )
     title = models.ForeignKey(
         Event, related_name="event_name", on_delete=models.CASCADE
-        )
+    )
     num_tickets = models.PositiveIntegerField(default=1)
     booking_date = models.DateTimeField(auto_now_add=True)
 
@@ -31,7 +31,7 @@ class Booking(models.Model):
         if self.num_tickets > available_tickets:
             raise ValidationError(
                 f"Only {available_tickets} tickets available for this event"
-                )
+            )
 
         total_booked_tickets = self.title.booked_tickets + self.num_tickets
         if total_booked_tickets > self.title.max_capacity:

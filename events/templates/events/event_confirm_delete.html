@@ -1,14 +1,15 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% load static %}
 
-{% block title %}Delete event {{ object.title }}{% endblock %} 
+{% block title %}Delete event {{ object.title }}{% endblock %}
 
 {% block content %}
+<!-- Event confirm delete form -->
 <div class="container">
     <h1 class="text-center mt-2">Confirm Event Deletion</h1>
     <div class="d-flex justify-content-center pt-3">
         <form method="post" class="text-center">
-            {% csrf_token %} 
+            {% csrf_token %}
             <p>Are you sure you want to delete "{{ object.title }}"?</p>
             <input type="submit" value="Confirm" class="btn btn-success w-25">
         </form>

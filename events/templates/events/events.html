@@ -1,27 +1,25 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
 {% block title %}Events{% endblock %}
 
-{% block content %} 
-<section>
-<h1 class="text-center p-2 d-block">
-    Latest Events
-</h1>
-<div class="container d-flex flex-row flex-wrap justify-content-center">
-    {% for event in events %} 
-    <a href="{% url 'event_detail' event.id %}" class="events" aria-label="Click to view {{event.title}}">
-        <div class="card m-3" style="width: 18rem;">
-            <img src="{{event.image.url}}" class="card-img-top" alt="{{event.image_alt}}">
-            <div class="card-body">
-              <h2 class="card-title">{{event.title}}</h2>
-              <p class="card-text">{{event.summary|truncatechars:100}}</p>
+{% block content %}
+    <!-- Events page (list view)-->
+    <h1 class="text-center p-2 d-block">
+        Latest Events
+    </h1>
+    <div class="container d-flex flex-row flex-wrap justify-content-center">
+        {% for event in events %}
+        <a href="{% url 'event_detail' event.id %}" class="events" aria-label="Click to view {{event.title}}">
+            <div class="card m-3" style="width: 18rem;">
+                <img src="{{event.image.url}}" class="card-img-top" alt="{{event.image_alt}}">
+                <div class="card-body">
+                    <h2 class="card-title">{{event.title}}</h2>
+                    <p class="card-text">{{event.summary|truncatechars:100}}</p>
+                </div>
             </div>
-        </div>
-    </a>  
-    {% empty %}
-    <h2>No events are currently scheduled</h2>
-    {% endfor %}
-</div>
-</section>
-
+        </a>
+        {% empty %}
+        <h2>No events are currently scheduled</h2>
+        {% endfor %}
+    </div>
 {% endblock %}

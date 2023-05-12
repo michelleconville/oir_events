@@ -13,6 +13,7 @@ class CreateBooking(LoginRequiredMixin, CreateView):
     """
     A view to create a new booking
     """
+
     template_name = "bookings/add_booking.html"
     model = Booking
     form_class = BookingForm
@@ -21,12 +22,15 @@ class CreateBooking(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
 
-        event = form.cleaned_data['title']
-        num_tickets = form.cleaned_data['num_tickets']
+        event = form.cleaned_data["title"]
+        num_tickets = form.cleaned_data["num_tickets"]
 
-        if num_tickets > event.available_tickets() or num_tickets + event.booked_tickets > event.max_capacity:
+        if (
+            num_tickets > event.available_tickets()
+            or num_tickets + event.booked_tickets > event.max_capacity
+        ):
             messages.error(self.request, "Maximum capacity reached for this event")
-            return redirect('/events/add_booking.html')
+            return redirect("/events/add_booking.html")
 
         get_event = Event.objects.get(title=event)
         get_event.booked_tickets = get_event.booked_tickets + num_tickets

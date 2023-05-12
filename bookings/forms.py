@@ -14,8 +14,8 @@ class BookingForm(forms.ModelForm):
         ]
 
         labels = {
-            'title': 'Select an event ',
-            'num_tickets': 'Number of tickets ',
+            "title": "Select an event ",
+            "num_tickets": "Number of tickets ",
         }
 
     def clean(self):
@@ -40,4 +40,4 @@ class BookingForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         # Update queryset for 'title' field to only include active events
-        self.fields['title'].queryset = Event.objects.filter(active=True)
+        self.fields["title"].queryset = Event.objects.filter(active=True)

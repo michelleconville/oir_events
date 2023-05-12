@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('contact', '0004_auto_20230502_1847'),
+        ("contact", "0004_auto_20230502_1847"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='contact',
-            name='name',
+            model_name="contact",
+            name="name",
             field=models.CharField(max_length=254, null=True),
         ),
     ]
