@@ -87,9 +87,78 @@ EPIC 7 – Documentation
 
 * Complete readme documentation 
 
-## The structure
+### The structure
 
-### Features
+#### Website pages
+
+The site was designed to be user-friendly and responsive, with the navigation bar along the top of the pages and a hamburger menu button for smaller screen.
+
+The footer contains the social media links for the Houses of the Oireachtas so the user can visit any social media platforms and follow, which will help to expand the followers, likes and shares.
+
+The site consists of the following pages:
+
+* A homepage with a carrousel of images and call to action buttons on the images, it also contains an accordion of Visitor Information.
+* An events page with cards of all the upcoming events.
+* An Add event form to create new events 
+* A detailed event page that gives all the information about a particular event, staff have the option to edit or delete the event from this page
+* A create booking form, to book tickets for any upcoming events
+* A manage booking page, users will have the option to delete there booking from here which will then delete it from the database, staff will also have this option and the option to edit the booking. 
+* A booking overview, that displays number of tickets booked per event for staff only
+* A contact form that allows both login and not logged in users to send a message
+* Login / Logout allows users to login to make bookings, view, and delete bookings
+* Register allows the user to register so they can use the booking system
+* Error pages – 404, 403, 500
+
+#### Database
+
+
+#### Security
+
+Views were secured by using the Django class-based view mixin, UserPassesTextMixin. A test function was created to use the mixin and checks were run to ensure that the user who is trying to access the page is authorised, the 403-page displays if this is the case. All staff restricted functionality; user edit/delete functionality listed in the features was secured using this method.
+
+Environment variables are stored in an env.py for security purposes to ensure no secret keys, api keys or sensitive information was added the repository. In production, these variables were added to the Heroku config vars within the project.
+
+#### Wireframes
+
+<details><summary>Homepage</summary>
+
+![homepage](docs/readme_images/wireframes/homepage.png) 
+
+</details>
+
+<details><summary>Events pages</summary>
+
+![Events pages](docs/readme_images/wireframes/all_event_pages.png) 
+
+</details>
+
+<details><summary>Booking pages</summary>
+
+![Booking pages](docs/readme_images/wireframes/booking.png) 
+
+</details>
+
+<details><summary>Contact pages</summary>
+
+![Contact pages](docs/readme_images/wireframes/contact.png) 
+
+</details>
+
+<details><summary>Contact pages</summary>
+
+![Authentication pages](docs/readme_images/wireframes/authentication_pages.png) 
+
+</details>
+
+<details><summary>Contact pages</summary>
+
+![Authentication messages](docs/readme_images/wireframes/error_messages.png) 
+
+</details>
+
+
+
+## Features
 
 #### Navigation Menu
 
@@ -118,6 +187,7 @@ If a staff user chooses to register and/or login, the following navigation optio
 * Add (to add an event)
 * Bookings (Drop Down):
     * Manage Bookings (All booking)
+    * Booking overview
     * New Booking
 * Contact
 * Logout
