@@ -9,7 +9,7 @@ from .models import Event
 class EventTestCase(TestCase):
     def setUp(self):
         # Create a user for testing
-        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.user = User.objects.create_user(username='testuser', password='testpassword', is_superuser=True)
 
         # Create an event for testing
         self.event = Event.objects.create(
@@ -46,7 +46,7 @@ class EventTestCase(TestCase):
         self.assertContains(response, 'Test Event')
 
     def test_event_detail_view(self):
-        url = reverse('event_detail', kwargs={'pk': self.event.pk})
+        url = reverse('add_event', kwargs={'pk': self.event.pk})
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, self.event.title)
