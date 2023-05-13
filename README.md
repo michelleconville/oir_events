@@ -77,6 +77,7 @@ Epic 5 Additional pages
 * As a site owner, I would like a home page so that users can view information on my website
 * As a site user, I want to read frequently asked questions so that I can find information on events
 * As a site user, I want to access information on how to find Leinster House, so I arrive at the correct entrance
+* As a user, I would like to be able to contact the events team so that I can have any queries answered
 
 EPIC 6 - Deployment Epic
 
@@ -251,9 +252,13 @@ For staff members, they also have the ability to delete any booking through the 
 
 On the manage bookings page, an edit button displays for staff and admin users only, this allows staff to easily edit any booking to change the number of tickets that have been booked.
 
+**Contact Us**
 
+*       USER STORY: As a user, I would like to be able to contact the events team so that I can have any queries answered
 
+A contact form was implemented for users of the site could contact the events team. The form can be user by both non-logged in and logged in users. This will allow the user to provide feedback or ask any questions.
 
+On successful completion of the form the user will be re-directed to a thank you message and receive email confirmation. This will allow the user to know their message has been received. 
 
 
 
