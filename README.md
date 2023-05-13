@@ -12,7 +12,7 @@ The Houses of the Oireachtas regularly hosts events and exhibitions, and also of
 
 The site will offer users information on all Oireachtas events, exhibitions and open tours, an ability to create an account to book, reschedule and cancel tickets, and important visit information. The site will allow the site owner to manage ticketing for all events through one site.  
 
-## User Experience Design
+## User Experience
 
 ### Target Audience 
 
@@ -25,6 +25,8 @@ The site will offer users information on all Oireachtas events, exhibitions and 
 * A visually appealing, accessible, and easy to use site 
 * An intuitive navigation with logical workflows for event booking management 
 * An ability to view information on events and manage bookings
+
+## Planning
 
 ### Agile Planning
 
@@ -86,6 +88,19 @@ EPIC 6 - Deployment Epic
 EPIC 7 – Documentation
 
 * Complete readme documentation 
+
+## Design 
+
+### Colour Scheme
+
+![Colour pallette image](docs/readme_images/colour-palette.png) 
+
+The dark green is the main colour on the website and the background pages are a light grey. The pink colour is mainly used in the navigation bar and on the detailed events page to break it up. Both the black and white colours are used for text through out the site. 
+
+### Typography
+
+The fonts used are Montserrat and Hind. Fonts were imported from Google Fonts. The backup font of sans-serif was used in case the fonts do not load for the user.
+
 
 ### The structure
 
@@ -155,7 +170,6 @@ Environment variables are stored in an env.py for security purposes to ensure no
 ![Authentication messages](docs/readme_images/wireframes/error_messages.png) 
 
 </details>
-
 
 
 ## Features
@@ -373,11 +387,34 @@ The message outlines to users that the problem is with the website not anything 
 A site wide favicon was implemented. This provides an image in the tabs header to allow the user to easily identify the website if they have multiple tabs open.
 
 
+## Libraries and Technologies Used
+### Language used
+*   HTML - The structure of the Website was developed using HTML as the main language.
+*   CSS - The Website was styled using custom CSS in an external file.
+*   JavaScript - This was used to make the message automaticly close
+*   Python - The main programming language used for the application using the Django Framework.
+
+### Main Python Modules Used
+
+*   Django Class based views (ListView, UpdateView, DeleteView, CreateView) - Used to create, read, update and delete
+*   Mixins (LoginRequiredMixin, UserPassesTestMixin) - Used to enforce login required on views and restrict users to the tasks that they could proform
+*   Messages - Used to display feedback to users
+
+### Other
+
+*   GitHub - Source code is hosted on GitHub.
+*   Gitpod - Used to commit and push code during the development of the project.
+*   Heroku - To the deploy the code to a online terminal
+<!-- *   Movavi video editor - To create a video of the application working
+*   [ezgif](http://ezgif.com/) - To create a gif -->
+*   Favicon.io - favicon files were created at https://favicon.io/favicon-converter/
+*   balsamiq - wireframes were created using balsamiq
 
 
-
-
-
+## Credits
+Media
+All images were provided and used from the [Oireachtas Flickr account](https://www.flickr.com/photos/oireachtas/)
+Text used on the Visitor Information area and Event pages was used from the [Houses of the Oireachtas website](https://www.oireachtas.ie/)
 
 
 
