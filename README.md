@@ -256,9 +256,57 @@ On the manage bookings page, an edit button displays for staff and admin users o
 
 *       USER STORY: As a user, I would like to be able to contact the events team so that I can have any queries answered
 
-A contact form was implemented for users of the site could contact the events team. The form can be user by both non-logged in and logged in users. This will allow the user to provide feedback or ask any questions.
+![Contact form image](docs/readme_images/features/contact-us.jpg) 
 
-On successful completion of the form the user will be re-directed to a thank you message and receive email confirmation. This will allow the user to know their message has been received. 
+A contact form was implemented for users of the site so they could contact the events team. The form can be user by both non-logged in and logged in users. This will allow the user to provide feedback or ask any questions.
+
+![Success message for contact form image](docs/readme_images/features/contact-success-message.jpg) 
+
+On successful completion of the form the user will be re-directed to a success message and receive email confirmation. This will allow the user to know their message has been received. 
+
+**Error Pages**
+
+**404 page**
+
+*   USER STORY - As a developer, I need to implement a 404-error page to alert users when they have accessed a page that doesn't exist
+
+![404 error image](docs/readme_images/features/404_error.jpg) 
+
+A 404 page has been implemented and will display if a user navigates to a broken link.
+
+The 404 page will allow the user to easily navigate back to the main website if they direct to a broken link / missing page, without the need of the browsers back button.
+
+**403 page**
+
+*   As a developer, I need to implement a 403-error page to redirect unauthorised users to, so that I can secure my views
+
+![403 error image](docs/readme_images/features/403_error.jpg) 
+
+A 403 error page has been implemented to provide feedback to the user when they try to access unauthorised content. 
+
+Users will be directed to this page if they alter the URL's and attempt to edit, delete or access pages that are restricted.
+
+**500 page**
+
+*   As a developer, I need to implement a 500-error page to alert users when an internal server error occurs
+
+![500 error image](docs/readme_images/features/500_error.jpg) 
+
+A 500 error page has been displayed to alert users when an internal server error occurs. 
+
+The message outlines to users that the problem is with the website not anything they have done.
+
+**Favicon**
+
+![Favicon image](docs/readme_images/features/favicon.png) 
+
+A site wide favicon was implemented. This provides an image in the tabs header to allow the user to easily identify the website if they have multiple tabs open.
+
+
+
+
+
+
 
 
 
