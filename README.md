@@ -159,15 +159,15 @@ Environment variables are stored in an env.py for security purposes to ensure no
 
 </details>
 
-<details><summary>Contact pages</summary>
+<details><summary>Authentication pages</summary>
 
 ![Authentication pages](docs/readme_images/wireframes/authentication_pages.png) 
 
 </details>
 
-<details><summary>Contact pages</summary>
+<details><summary>Error messages</summary>
 
-![Authentication messages](docs/readme_images/wireframes/error_messages.png) 
+![Error messages](docs/readme_images/wireframes/error_messages.png) 
 
 </details>
 
@@ -387,7 +387,7 @@ The message outlines to users that the problem is with the website not anything 
 A site wide favicon was implemented. This provides an image in the tabs header to allow the user to easily identify the website if they have multiple tabs open.
 
 
-## Libraries and Technologies Used
+## Technologies Used
 ### Language used
 *   HTML - The structure of the Website was developed using HTML as the main language.
 *   CSS - The Website was styled using custom CSS in an external file.
@@ -411,13 +411,6 @@ A site wide favicon was implemented. This provides an image in the tabs header t
 *   balsamiq - wireframes were created using balsamiq
 
 
-## Credits
-Media
-All images were provided and used from the [Oireachtas Flickr account](https://www.flickr.com/photos/oireachtas/)
-Text used on the Visitor Information area and Event pages was used from the [Houses of the Oireachtas website](https://www.oireachtas.ie/)
-
-
-
 ## Deployment
 The site was deployed via [Heroku]( https://id.heroku.com/login), and the live link can be found here: [Oireachtas Events website](https://oir-events.herokuapp.com/) 
 
@@ -435,11 +428,12 @@ The git commands I used to push the code from gitpod to github were
 
 `git push` - This command was used to push all committed code to the remote repository on github.
 
-#### Clone the repository
+
+### Clone the repository
 The steps to clone a repository are as follows:
 1.	Navigate to the GitHub repository you would like to clone
 2.	Click on the code drop down button
-3.	Click on the HTTPS tab
+3.	Select if you prefere to clone using HTTPS, SSH, or Github CLI 
 4.	Copy the repository link to the clipboard
 5.	Open Git Bash
 6.	Change the current working directory to the one where you want the cloned directory
@@ -448,8 +442,13 @@ The steps to clone a repository are as follows:
 
 The repository will now be cloned on your local machine for use.
 
-### Herouku
-Before deploying to Heroku `pip3 freeze > requirements.txt` was used to add the neccessary imports for deployment. See [Python Libraries](#python-libraries) for a full list.
+### Fork Repository
+To fork the repository by following these steps:
+1. Go to the GitHub repository
+2. Click on Fork button in upper right hand corner
+
+### Heroku
+Before deploying to Heroku `pip3 freeze > requirements.txt` was used to add the neccessary installs for deployment and a Procfile was created.
 
 #### Setting up a new app
 1. Log in to [Heroku]( https://id.heroku.com/login) 
@@ -461,10 +460,12 @@ Before deploying to Heroku `pip3 freeze > requirements.txt` was used to add the 
 #### Updating the settings 
 * Click on the **Settings Tab** 
 * Scroll down to **Config Vars**
-* Add CREDS to the **key** field and in the **value** field, paste in the details of the creds.json and **Add** button.
-* Scroll down to **Add Buildpack** 
-* Select **python** and click **Save Changes**, then add **node.js**.
-* **Note:** The Buildpacks must be in the correct order. If not click and drag them to move into the correct order.
+* Add the following config vars:
+    * SECRET_KEY: (Your secret key)
+    * DATABASE_URL: (Your database url)
+    * EMAIL_HOST_USER: (email address)
+    * EMAIL_HOST_PASS: (email app password)
+    * CLOUNDINARY_URL: (cloudinary api url)
 
 #### Deploying the application
 * Scroll to the top of the page and now choose the **Deploy** tab.
@@ -475,6 +476,13 @@ Before deploying to Heroku `pip3 freeze > requirements.txt` was used to add the 
 Scroll to the bottom of the deploy page and select preferred deployment type:
 * Click either **Enable Automatic Deploys** for automatic deployment when you push updates to Github.
 * Select the correct branch for deployment from the drop-down menu and click **Deploy Branch** for manual deployment.
+
+
+## Credits
+Media
+* All images were provided and used from the [Oireachtas Flickr account](https://www.flickr.com/photos/oireachtas/)
+* Content used on the Visitor Information area and Event pages was used from the [Houses of the Oireachtas website](https://www.oireachtas.ie/)
+* Logo used is the Official Logo for the Houses of the [Houses of the Oireachtas](https://www.oireachtas.ie/)
 
 
 
