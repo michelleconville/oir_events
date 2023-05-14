@@ -25,21 +25,3 @@ class Booking(models.Model):
 
     def __str__(self):
         return str(self.title)
-
-    def clean(self):
-        available_tickets = self.title.available_tickets()
-        if self.num_tickets > available_tickets:
-            raise ValidationError(
-                f"Only {available_tickets} tickets available for this event"
-            )
-
-        total_booked_tickets = self.title.booked_tickets + self.num_tickets
-        if total_booked_tickets > self.title.max_capacity:
-            raise ValidationError("Maximum capacity reached for this event")
-
-        return super().clean()
-
-    def save(self, *args, **kwargs):
-        if self.pk is None and self.num_tickets > 4:
-            raise ValidationError("Maximum of 4 tickets per booking")
-        return super().save(*args, **kwargs)

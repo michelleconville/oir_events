@@ -4,6 +4,8 @@
 
 Project for Code Institute Full-stack development program: Full-Stack Toolkit.
 
+![website mockup image](docs/readme_images/mock-up.jpg) 
+
 View the [Live site](https://oir-events.herokuapp.com/)
 
 ### Project goals
@@ -399,16 +401,20 @@ A site wide favicon was implemented. This provides an image in the tabs header t
 *   Django Class based views (ListView, UpdateView, DeleteView, CreateView) - Used to create, read, update and delete
 *   Mixins (LoginRequiredMixin, UserPassesTestMixin) - Used to enforce login required on views and restrict users to the tasks that they could proform
 *   Messages - Used to display feedback to users
+*   CKEditor - Used for rich text editor on the Event pages
 
 ### Other
 
 *   GitHub - Source code is hosted on GitHub.
 *   Gitpod - Used to commit and push code during the development of the project.
+*   ElephantSQL - used to manage a PostgreSQL database.
 *   Heroku - To the deploy the code to a online terminal
-<!-- *   Movavi video editor - To create a video of the application working
-*   [ezgif](http://ezgif.com/) - To create a gif -->
 *   Favicon.io - favicon files were created at https://favicon.io/favicon-converter/
 *   balsamiq - wireframes were created using balsamiq
+*   Bootstrap - Used to quickly add design to my website
+*   Cloudinary - Used to store images online for the Events
+*   Coolors - to make color palette
+*   Am I Responsive - - to create an image of the website shown on different devices.
 
 
 ## Deployment

@@ -1,6 +1,4 @@
 from django.test import TestCase
-from django.contrib.auth.models import Permission
-from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import User
 from django.urls import reverse
 from .models import Event
@@ -9,7 +7,9 @@ from .models import Event
 class EventTestCase(TestCase):
     def setUp(self):
         # Create a user for testing
-        self.user = User.objects.create_user(username='testuser', password='testpassword', is_superuser=True)
+        self.user = User.objects.create_user(
+            username='testuser', password='testpassword', is_superuser=True
+            )
 
         # Create an event for testing
         self.event = Event.objects.create(
@@ -46,7 +46,58 @@ class EventTestCase(TestCase):
         self.assertContains(response, 'Test Event')
 
     def test_event_detail_view(self):
-        url = reverse('add_event', kwargs={'pk': self.event.pk})
+        url = reverse('event_detail', kwargs={'pk': self.event.pk})
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, self.event.title)
+
+    def test_add_event_view(self):
+        self.staff_user = User.objects.create_user(
+            username='staffuser', password='testpassword', is_staff=True
+            )
+        self.client.login(username='staffuser', password='testpassword')
+        url = reverse('add_event')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'events/add_event.html')
+
+    def test_delete_event_view(self):
+        self.staff_user = User.objects.create_user(
+                username='staffuser', password='testpassword', is_staff=True
+                )
+        self.client.login(username='staffuser', password='testpassword')
+        url = reverse('delete_event', kwargs={'pk': self.event.pk})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'events/event_confirm_delete.html')
+
+    def test_edit_event_view(self):
+        self.staff_user = User.objects.create_user(
+                username='staffuser', password='testpassword', is_staff=True
+                )
+        self.client.login(username='staffuser', password='testpassword')
+        url = reverse('edit_event', kwargs={'pk': self.event.pk})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'events/edit_event.html')
+
+    def test_add_event_view_end_user(self):
+        self.client.login(username='enduser', password='endpassword')
+        url = reverse('add_event')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 302)
+        self.assertTemplateNotUsed(response)
+
+    def test_edit_event_view_end_user(self):
+        self.client.login(username='enduser', password='endpassword')
+        url = reverse('edit_event', kwargs={'pk': self.event.pk})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 302)
+        self.assertTemplateNotUsed(response)
+
+    def test_delete_event_view_end_user(self):
+        self.client.login(username='enduser', password='endpassword')
+        url = reverse('delete_event', kwargs={'pk': self.event.pk})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 302)
+        self.assertTemplateNotUsed(response)
