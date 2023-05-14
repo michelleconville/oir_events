@@ -41,7 +41,7 @@ main {
 }
 
 hr {
-    color: var(--pink);
+    border-top: 3px solid var(--pink);
 }
 
 /* footer */
@@ -156,10 +156,13 @@ table {
 
 .carousel-caption {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--almost-black);
+    background-color: rgb(237 41 135 / 50%);
+    height: 140px; 
+    border-radius: 10px; 
   }
 
   .img-carousel {
@@ -168,6 +171,21 @@ table {
     width: 100%;
     height: auto;
     z-index: 1;
+}
+
+@media(max-width:1428px){
+    /* Change the size of the carousel caption */
+    .carousel-caption {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--almost-black);
+        background-color: rgb(237 41 135 / 50%);
+        height: 180px; /* Adjust the height to make it smaller */
+        border-radius: 10px; 
+      }
+
 }
 
 @media(max-width:767px){
@@ -185,6 +203,16 @@ table {
         width: 40%;
         margin: 0 auto;
     }
+
+    .carousel-caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--almost-black);
+        background-color: rgb(237 41 135 / 0%);
+        height: 180px;
+      }
 }
 
 @media(max-width:599px){

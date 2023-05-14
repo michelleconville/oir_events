@@ -6,8 +6,9 @@
 
 
 <div class="container">
-    <form method="POST" enctype="multipart/form-data" class="p-2 form text-white">
-        <h1 class="text-center">Contact us</h1>
+    <h1>Contact us</h1>
+    <p>Have a question or what to leave some feedback?</p>
+    <form method="POST" enctype="multipart/form-data" class="p-4 form text-white">
         {% csrf_token %}
         {{ form.media }} 
         {{ form|crispy }}
