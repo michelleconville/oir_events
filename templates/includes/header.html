@@ -1,10 +1,12 @@
 {% load static %}
 
 <header>
+    <!-- Disclaimer note -->
     <section id="top" class="bg-success">
         <div class="top container">
             <div class="row">
-                <p class="text-white text-center m-0">This is a student project, tickets <strong>can not</strong> be booked for any Oireachtas Event</p>
+                <p class="text-white text-center m-0">This is a student project, tickets <strong>can not</strong> be
+                    booked for any Oireachtas Event</p>
             </div>
         </div>
     </section>
@@ -37,8 +39,8 @@
                 {% endif %}
                 {% if request.user.is_authenticated and not request.user.is_staff %}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle mx-3 text-white fs-6" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle mx-3 text-white fs-6" href="#" id="navbarDropdownMenuLink"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Bookings
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -53,14 +55,14 @@
                 {% endif %}
                 {% if user.is_staff %}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle mx-3 text-white fs-6" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle mx-3 text-white fs-6" href="#" id="navbarDropdownMenuLink"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Bookings
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item text-white" aria-current="page"
-                            href="{% url 'booking_overview' %}">Booking
-                            Overview</a></li>
+                                href="{% url 'booking_overview' %}">Booking
+                                Overview</a></li>
                         <li><a class="dropdown-item text-white" aria-current="page"
                                 href="{% url 'staff_bookings' %}">Manage
                                 Bookings</a></li>
