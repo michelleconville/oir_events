@@ -5,6 +5,9 @@ from django.conf import settings
 
 
 def contact(request):
+    """
+    A view to for the contact form
+    """
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():

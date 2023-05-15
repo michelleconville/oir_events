@@ -3,7 +3,7 @@ from .models import Contact
 
 
 class ContactForm(forms.ModelForm):
-    """Form to create a event"""
+    """Form for the contact page"""
 
     class Meta:
         model = Contact

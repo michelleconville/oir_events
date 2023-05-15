@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Contact{% endblock %} 
+{% block title %}Contact{% endblock %}
 
 {% block content %}
 
@@ -10,7 +10,7 @@
     <p>Have a question or what to leave some feedback?</p>
     <form method="POST" enctype="multipart/form-data" class="p-4 form text-white">
         {% csrf_token %}
-        {{ form.media }} 
+        {{ form.media }}
         {{ form|crispy }}
 
         <div class="text-center">
