@@ -220,7 +220,6 @@ The WAVE WebAIM web accessibility evaluation tool was used throughout developmen
 
 <details><summary>Color Contrast Accessibility Validator results</summary>
 
-
 ![Color Contrast Accessibility Validator results](docs/readme_images/test/colour-validtion.jpg) 
 
 </details>
