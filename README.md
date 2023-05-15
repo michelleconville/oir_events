@@ -383,6 +383,10 @@ The message outlines to users that the problem is with the website not anything 
 
 A site wide favicon was implemented. This provides an image in the tabs header to allow the user to easily identify the website if they have multiple tabs open.
 
+## Testing 
+
+Due to the amount of information regarding testing, it has been detailed in the following [Test document](https://github.com/michelleconville/oir_events/blob/main/TESTING.md).
+
 ## Security Features and Defensive Design
 
 For user authentication, Django's allauth was used for login and sign up functionality.
