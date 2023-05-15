@@ -434,7 +434,8 @@ Cross-Site Request Forgery (CSFR) tokens are used on all forms throughout the pr
 *   Bootstrap - Used to quickly add design to my website
 *   Cloudinary - Used to store images online for the Events
 *   Coolors - to make color palette
-*   Am I Responsive - - to create an image of the website shown on different devices.
+*   Am I Responsive - to create an image of the website shown on different devices.
+*   Boxicons - to create the icons for social media
 
 
 ## Deployment
