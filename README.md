@@ -383,9 +383,20 @@ The message outlines to users that the problem is with the website not anything 
 
 A site wide favicon was implemented. This provides an image in the tabs header to allow the user to easily identify the website if they have multiple tabs open.
 
+### Future Features 
+
+**Search function for staff**
+
+It would be nice to include a search function for staff on the manage bookings page.
+
+**QR codes for tickets**
+
+Adding a generate QR code fucntion that emails to users as there ticket for an event.
+
 ## Testing 
 
 Due to the amount of information regarding testing, it has been detailed in the following [Test document](https://github.com/michelleconville/oir_events/blob/main/TESTING.md).
+
 
 ## Security Features and Defensive Design
 

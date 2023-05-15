@@ -37,11 +37,11 @@
                 {% endif %}
                 {% if request.user.is_authenticated and not request.user.is_staff %}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle nav-link mx-3 text-white fs-6" href="#" role="button"
+                    <a class="nav-link dropdown-toggle mx-3 text-white fs-6" href="#" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Bookings
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="bookings-dropdown" aria-controls="dropdown-menu">
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item text-white" aria-current="page"
                                 href="{% url 'user_bookings' %}">Manage
                                 Bookings</a></li>
@@ -53,11 +53,14 @@
                 {% endif %}
                 {% if user.is_staff %}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle nav-link mx-3 text-white fs-6" href="#" role="button"
+                    <a class="nav-link dropdown-toggle mx-3 text-white fs-6" href="#" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Bookings
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="bookings-dropdown" aria-controls="dropdown-menu">
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item text-white" aria-current="page"
+                            href="{% url 'booking_overview' %}">Booking
+                            Overview</a></li>
                         <li><a class="dropdown-item text-white" aria-current="page"
                                 href="{% url 'staff_bookings' %}">Manage
                                 Bookings</a></li>
