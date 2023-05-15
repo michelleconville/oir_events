@@ -129,11 +129,6 @@ The site consists of the following pages:
 #### Database
 
 
-#### Security
-
-Views were secured by using the Django class-based view mixin, UserPassesTextMixin. A test function was created to use the mixin and checks were run to ensure that the user who is trying to access the page is authorised, the 403-page displays if this is the case. All staff restricted functionality; user edit/delete functionality listed in the features was secured using this method.
-
-Environment variables are stored in an env.py for security purposes to ensure no secret keys, api keys or sensitive information was added the repository. In production, these variables were added to the Heroku config vars within the project.
 
 #### Wireframes
 
@@ -387,6 +382,16 @@ The message outlines to users that the problem is with the website not anything 
 ![Favicon image](docs/readme_images/features/favicon.png) 
 
 A site wide favicon was implemented. This provides an image in the tabs header to allow the user to easily identify the website if they have multiple tabs open.
+
+## Security Features and Defensive Design
+
+For user authentication, Django's allauth was used for login and sign up functionality.
+
+Views were secured by using the Django class-based view mixin, UserPassesTextMixin. A test function was created to use the mixin and checks were run to ensure that the user who is trying to access the page is authorised, the 403-page displays if this is the case. All staff restricted functionality; user edit/delete functionality listed in the features was secured using this method.
+
+Environment variables are stored in an env.py for security purposes to ensure no secret keys, api keys or sensitive information was added the repository. In production, these variables were added to the Heroku config vars within the project.
+
+Cross-Site Request Forgery (CSFR) tokens are used on all forms throughout the project.
 
 
 ## Technologies Used
