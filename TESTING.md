@@ -16,6 +16,7 @@ Finally, I asked friends to look at the site on their devices and report any iss
  - [Automated testing](#automated-testing)
  - [Validator Testing](#validator-testing)
  - [Testing Browser Compatibility](#testing-browser-compatibility)
+ - [Bugs](#bugs)
 
 
 ## Manual Testing
@@ -225,3 +226,18 @@ In addition to the above listed devices, the Google Chrome Developer Tools devic
 
 ##### Back to [top](#table-of-contents)
 
+## Bugs
+
+1. Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented')
+
+This Error appeared in the dev tools, I updated the JS script for messages to close automaticly and this resolved this issue.
+
+2. Booking tickets - more can be booked than available
+
+When users are booking tickets, more tickets can be booking than are available, I updated the validation on the booking form to resolve this issue.
+
+3. Dropdown in nav bar now working
+
+The dropdown in the nav menu for bookings will not work, the follow error appears when you use the developer tools to look at the issue *Uncaught TypeError: i.createPopper is not a function*. After adding the popper.js script, this resolved the issue
+
+##### Back to [top](#table-of-contents)
