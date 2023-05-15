@@ -1,18 +1,17 @@
 {% extends "base.html" %}
-{% load static %}
 
 {% block extrahead %}
 <link rel="stylesheet" type="text/css" href="{% static 'bookings/css/overview.css' %}">
 {% endblock %}
 
-{% block title %}Events Overview{% endblock %} 
+{% block title %}Events Overview{% endblock %}
 
 {% block content %}
 
 <h1 class="text-center">Overview of events</h1>
 <div>
-{% if event_list %}
-<table class="table table-hover text-white container pt-1">
+  {% if event_list %}
+  <table class="table table-hover text-white container pt-1">
     <thead>
       <tr>
         <th>Title</th>
@@ -24,19 +23,19 @@
     </thead>
     <tbody>
       {% for event in event_list %}
-        <tr>
-            <td class="text-white fs-6">{{ event.title }}</td>
-            <td class="text-white fs-6">{{ event.event_date }}</td>
-            <td class="text-white fs-6">{{ event.tour_time }}</td>
-            <td class="text-white fs-6">{{ event.max_capacity }}</td>
-            <td class="text-white fs-6">{{ event.booked_tickets }}</td>
-        </tr>
+      <tr>
+        <td class="text-white fs-6">{{ event.title }}</td>
+        <td class="text-white fs-6">{{ event.event_date }}</td>
+        <td class="text-white fs-6">{{ event.tour_time }}</td>
+        <td class="text-white fs-6">{{ event.max_capacity }}</td>
+        <td class="text-white fs-6">{{ event.booked_tickets }}</td>
+      </tr>
       {% endfor %}
     </tbody>
   </table>
-{% else %}
+  {% else %}
   <p>No events currently scheduled</p>
 
-{% endif %}
+  {% endif %}
 </div>
 {% endblock %}

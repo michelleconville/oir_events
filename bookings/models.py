@@ -5,6 +5,9 @@ from django.core.exceptions import ValidationError
 
 
 class Booking(models.Model):
+    """
+    Model to create a booking
+    """
     user = models.ForeignKey(
         User, related_name="booking_owner", on_delete=models.CASCADE
     )

@@ -6,6 +6,9 @@ from events.models import Event
 
 
 class BookingForm(forms.ModelForm):
+    """
+    Form to create and edit a booking
+    """
     class Meta:
         model = Booking
         fields = [

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Edit Booking{% endblock %} 
+{% block title %}Edit Booking{% endblock %}
 
 {% block content %}
 
@@ -8,7 +8,7 @@
     <form method="POST" enctype="multipart/form-data" class="p-2 form text-white">
         <h1 class="text-left">Edit Booking</h1>
         {% csrf_token %}
-        {{ form.media }} 
+        {{ form.media }}
         {{ form|crispy }}
         <div class="text-left">
             <button type="submit" class="btn btn-success mt-2">Edit Booking</button>

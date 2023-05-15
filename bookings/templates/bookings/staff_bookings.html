@@ -7,7 +7,7 @@
 
 {% block title %}Booking Detail{% endblock %}
 
-{% block content %} 
+{% block content %}
 <div>
     <h1 class="text-center">Bookings List</h1>
     <p class="text-center"><em>Please note: This list will only show tickets for upcoming events</em></p>
@@ -15,7 +15,7 @@
         <thead>
             <tr>
                 <th>Booking Reference</th>
-                <th>Name of Event</th>	
+                <th>Name of Event</th>
                 <th>Date of Event</th>
                 <th>Name on Booking</th>
                 <th>Number of Tickets</th>
@@ -46,6 +46,11 @@
                 </td>
                 <td>
                     <a href="{% url 'delete_booking' booking.id %}" class="btn btn-danger">Delete</a>
+                </td>
+                {% endif %}
+                <!-- If there are no bookings, than display message -->
+                {% empty %}
+                <td class="text-white fs-6 empty-state">No events currently scheduled
                 </td>
             </tr>
         </tbody>

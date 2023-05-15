@@ -13,7 +13,18 @@ urlpatterns = [
     path("add/", CreateBooking.as_view(), name="create_booking"),
     path("user_bookings/", UserBookings.as_view(), name="user_bookings"),
     path("staff_bookings/", StaffBookings.as_view(), name="staff_bookings"),
-    path("bookings/<int:pk>/edit/", EditBooking.as_view(), name="edit_booking"),
-    path("bookings/<int:pk>/delete/", DeleteBooking.as_view(), name="delete_booking"),
-    path('booking_overview/', BookingOverview.as_view(), name='booking_overview'),
+    path(
+        "bookings/<int:pk>/edit/",
+        EditBooking.as_view(),
+        name="edit_booking"
+        ),
+    path(
+        "bookings/<int:pk>/delete/",
+        DeleteBooking.as_view(),
+        name="delete_booking"
+        ),
+    path(
+        "booking_overview/",
+        BookingOverview.as_view(),
+        name="booking_overview"),
 ]

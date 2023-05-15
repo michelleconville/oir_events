@@ -4,6 +4,9 @@ from .models import Booking
 
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
+    """
+    Class to view bookings on admin panel
+    """
     list_display = (
         "pk",
         "user",

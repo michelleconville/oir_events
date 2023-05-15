@@ -30,7 +30,8 @@ class CreateBooking(LoginRequiredMixin, CreateView):
             or num_tickets + event.booked_tickets > event.max_capacity
         ):
             messages.error(
-                self.request, "Maximum capacity reached for this event"
+                self.request,
+                "Maximum capacity reached for this event"
                 )
             return redirect("/events/add_booking.html")
 
@@ -41,7 +42,7 @@ class CreateBooking(LoginRequiredMixin, CreateView):
         messages.success(
             self.request,
             "Booking successfully created, view in Manage bookings"
-            )
+        )
         return super().form_valid(form)
 
 
@@ -100,7 +101,9 @@ class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-    """Delete a Booking"""
+    """
+    Delete a Booking
+    """
 
     model = Booking
     success_url = "/events/"
@@ -123,8 +126,9 @@ class BookingOverview(LoginRequiredMixin, UserPassesTestMixin, ListView):
     A view to display a list of events with information about
     active events, event date, tour time, max capacity, and booked tickets
     """
-    template_name = 'bookings/booking_overview.html'
-    context_object_name = 'events'
+
+    template_name = "bookings/booking_overview.html"
+    context_object_name = "events"
     model = Event
 
     def test_func(self):
@@ -136,17 +140,17 @@ class BookingOverview(LoginRequiredMixin, UserPassesTestMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         event_list = []
-        for event in context['events']:
+        for event in context["events"]:
             # Check if the event is active
             if event.active:
                 # Create a dictionary with information about the event
                 event_dict = {
-                    'title': event.title,
-                    'event_date': event.event_date,
-                    'tour_time': event.tour_times,
-                    'max_capacity': event.max_capacity,
-                    'booked_tickets': event.booked_tickets,
+                    "title": event.title,
+                    "event_date": event.event_date,
+                    "tour_time": event.tour_times,
+                    "max_capacity": event.max_capacity,
+                    "booked_tickets": event.booked_tickets,
                 }
                 event_list.append(event_dict)
-        context['event_list'] = event_list
+        context["event_list"] = event_list
         return context
