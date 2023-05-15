@@ -1,5 +1,16 @@
 # Testing and Validation
 
+I took a multi-stage approach to testing the site.
+
+The first stage was continuous testing as the site was being developed. This was important to do during development of the django apps to ensure that the different models, views and forms contained or returned the correct data type or values. During the styling of the site, I checked the visual appearance within a live server window to preview the changes before they were committed to reduce the number of bugs.
+
+For the second stage of testing, I used a more structured approach, I created both manaual and automated test cases, using the user stories to ensure all the features worked as expected, I executed the tests individually making a note of any errors or changes to the designed behaviour. Any errors were corrected and then the tests repeated.
+
+I then validated all the different types of code and ran performance and accessibility test across different browsers and device types.
+
+Finally, I asked friends to look at the site on their devices and report any issues they came found. All issues reported have been resolved. 
+
+
 ## Table of Contents 
  - [Manual Testing](#manual-testing)
  - [Automated testing](#automated-testing)
