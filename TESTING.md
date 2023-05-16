@@ -187,6 +187,22 @@ This will automatically run all test. If running tests in quick succession, it's
 
 All HTML pages were run though the [html-checker](https://validator.w3.org/nu/). 
 
+Due to the django templating language code used in the HTML files and pages with login required, these pages could not be copy and pasted into the validator. To test the validation on the files, open the page to validate, right click and view page source. Paste the raw html code into the validator as this will be only the HTML rendered code.
+
+All pages passed validation with the exception of one, the events detail page. It is showing an error, however, there is not a second close paragraph tag in the code, I was unable to resolve this issue. 
+
+<details><summary>HTML error</summary>
+
+![HTML error results](docs/readme_images/test/html-error.png) 
+
+</details>
+
+<details><summary>Event code</summary>
+
+![Event code](docs/readme_images/test/detail-event-code.png) 
+
+</details>
+
 ### CSS
 
 CSS was validated using the W3C Markup Validation Service. This was done using the 'Validate by Direct Input' option.

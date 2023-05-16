@@ -14,6 +14,42 @@ The Houses of the Oireachtas (Irish Parliament) regularly hosts events and exhib
 
 The site will offer users information on all Oireachtas events, exhibitions and open tours, an ability to create an account to book and cancel tickets, and will also provide important visit information. The site will allow the site owner to manage ticketing for all events through one site.
 
+
+## Table of Content
+
+1. [User Experience](#user-experience)
+    1. [Target Audience](#target-audience)
+    2. [User Requirements and Expectations](#user-requirements-and-expectations)
+2. [Planning](#planning)
+    1. [Agile Planning](#agile-planning)
+    2. [User stories](#user-stories)
+3. [Design](#design)
+    1. [Colour Scheme](#colour-scheme)
+    2. [Typography](#typography)
+	3. [Structure](#the-structure)
+		1. [Website pages](#website-pages)
+		2. [Database](#database)
+		3. [Wireframes](#wireframes)		
+4. [Features](#features)
+    1. [Navigation Menu](#navigation-menu)
+    2. [Footer](#footer)
+	3. [Homepage](#homepage)
+    4. [Events pages](#events-pages)
+	5. [Booking pages](#booking-pages)
+	6. [Contact Us](#contact-us)
+	7. [Error Pages](#error-pages)
+	8. [Favicon](#favicon)
+5. [Future Features](#Future-features)
+6. [Testing](#testing)
+7. [Security Features and Defensive Design](security-features-and-defensive-design)
+8. [Technologies Used](technologies-used)
+	1. [Languages](#Language-used)
+    2. [Main Python Modules](#main-python-modules)
+	3. [Other](#other)
+9. [Deployment](#deployment)
+10. [Credits](#credits)
+
+
 ## User Experience
 
 ### Target Audience 
@@ -42,7 +78,8 @@ In GitHub projects, a Kanban board was used to track the progress of the project
 
 * View the [Kanban board](https://github.com/users/michelleconville/projects/5)
 
-### User stories - broken down by Epic
+### User stories
+(Broken down by Epic)
 
 EPIC 1 - Initial Setup
 
@@ -183,12 +220,6 @@ An entity relationship diagram was created and shows the schemas for each of the
 
 The initial navigation menu contain links to the Home, Events, Contact, Register, Login pages. The navigation menu is displayed on all pages and changes into a hamburger menu on smaller devices. This will allow users to view the site from any device.
 
-* Home 
-* Events -> detailed event page
-* Contact
-* Register
-* Login
-
 The navigation changes depending on whether the user is an end user or a staff user. 
 
 If an end user chooses to register and/or login, the following navigation options are available:
@@ -231,7 +262,11 @@ These icons have aria-labels added to ensure users with assistive screen reading
 
 ![Homepage image](docs/readme_images/features/homepage.jpg) 
 
-The home page contains a carrousel of images taken in Leinster House. These images will have a call-to-action button on them, to either book an event or view all events. These buttons give the user a quick way to get to the events page or the booking page. The carrousel images can be replaced at any time using the backend admin panel.
+The home page contains a carrousel of images taken in Leinster House. These images will have a call-to-action button on them, to either book an event or view all events. These buttons give the user a quick way to get to the events page or the booking page. 
+
+The carrousel images can be added to or replaced at any time using the backend admin panel.
+
+![Homepage image](docs/readme_images/features/carousel_image.png) 
 
 The second part of the home page is visitor information, this information is displayed in an accordion module. This will give users information on, where to find Leinster House and what gate to use, via both a text description and a map, the items that them will need to bring with them and how to book tickets if it is there first visit to the website. 
 
