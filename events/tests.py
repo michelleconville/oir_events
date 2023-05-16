@@ -27,6 +27,7 @@ class EventTestCase(TestCase):
         )
 
     def test_event_model(self):
+        """Test Events model"""
         event = self.event
         self.assertEqual(event.title, 'Test Event')
         self.assertEqual(event.summary, 'Test summary')
@@ -40,18 +41,21 @@ class EventTestCase(TestCase):
         self.assertEqual(event.booked_tickets, 0)
 
     def test_event_list_view(self):
+        """Test Events list view"""
         url = reverse('events')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Test Event')
 
     def test_event_detail_view(self):
+        """Test Event page view"""
         url = reverse('event_detail', kwargs={'pk': self.event.pk})
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, self.event.title)
 
     def test_add_event_view(self):
+        """Test adding an events page view"""
         self.staff_user = User.objects.create_user(
             username='staffuser', password='testpassword', is_staff=True
             )
@@ -62,6 +66,7 @@ class EventTestCase(TestCase):
         self.assertTemplateUsed(response, 'events/add_event.html')
 
     def test_delete_event_view(self):
+        """Test deleting an events page view"""
         self.staff_user = User.objects.create_user(
                 username='staffuser', password='testpassword', is_staff=True
                 )
@@ -72,6 +77,7 @@ class EventTestCase(TestCase):
         self.assertTemplateUsed(response, 'events/event_confirm_delete.html')
 
     def test_edit_event_view(self):
+        """Test editing an events page view"""
         self.staff_user = User.objects.create_user(
                 username='staffuser', password='testpassword', is_staff=True
                 )
@@ -82,6 +88,7 @@ class EventTestCase(TestCase):
         self.assertTemplateUsed(response, 'events/edit_event.html')
 
     def test_add_event_view_end_user(self):
+        """Test an end user can not access the add event form"""
         self.client.login(username='enduser', password='endpassword')
         url = reverse('add_event')
         response = self.client.get(url)
@@ -89,6 +96,7 @@ class EventTestCase(TestCase):
         self.assertTemplateNotUsed(response)
 
     def test_edit_event_view_end_user(self):
+        """Test an end user can not access the edit event form"""
         self.client.login(username='enduser', password='endpassword')
         url = reverse('edit_event', kwargs={'pk': self.event.pk})
         response = self.client.get(url)
@@ -96,6 +104,7 @@ class EventTestCase(TestCase):
         self.assertTemplateNotUsed(response)
 
     def test_delete_event_view_end_user(self):
+        """Test an end user can not access the delete event page"""
         self.client.login(username='enduser', password='endpassword')
         url = reverse('delete_event', kwargs={'pk': self.event.pk})
         response = self.client.get(url)

@@ -4,6 +4,9 @@ from .models import Event
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
+    """
+    Class to view events on admin panel
+    """
     list_display = (
         "title",
         "active",
