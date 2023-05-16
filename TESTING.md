@@ -203,6 +203,7 @@ All pages passed validation with the exception of one, the events detail page. I
 
 </details>
 
+
 ### CSS
 
 CSS was validated using the W3C Markup Validation Service. This was done using the 'Validate by Direct Input' option.
@@ -213,15 +214,28 @@ CSS was validated using the W3C Markup Validation Service. This was done using t
 
 </details>
 
+
 ### JavaScript
 
 JSHint Static Code Analysis Tool for JavaScript was used to validate the Javascript files. No significant issues were found.
 
-<details><summary>JavaScript results </summary>
+<details><summary>JavaScript results</summary>
 
 ![JavaScript validation results](docs/readme_images/test/javascript.jpg) 
 
 </details>
+
+
+### pep8 
+
+[pep8ci](https://pep8ci.herokuapp.com/) was used for validating all python files. All python files were checked with no errors reported.
+
+<details><summary>Example of pep8ci results</summary>
+
+![Example of pep8ci results](docs/readme_images/test/pep8-validation.JPG) 
+
+</details>
+
 
 ### Accessibility
 
