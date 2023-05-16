@@ -15,7 +15,7 @@ The Houses of the Oireachtas (Irish Parliament) regularly hosts events and exhib
 The site will offer users information on all Oireachtas events, exhibitions and open tours, an ability to create an account to book and cancel tickets, and will also provide important visit information. The site will allow the site owner to manage ticketing for all events through one site.
 
 
-## Table of Content
+## Table of Contents
 
 1. [User Experience](#user-experience)
     1. [Target Audience](#target-audience)
@@ -39,11 +39,12 @@ The site will offer users information on all Oireachtas events, exhibitions and 
 	6. [Contact Us](#contact-us)
 	7. [Error Pages](#error-pages)
 	8. [Favicon](#favicon)
-5. [Future Features](#Future-features)
+    9. [Toast messages](#toast-messages)
+5. [Future Features](#future-features)
 6. [Testing](#testing)
-7. [Security Features and Defensive Design](security-features-and-defensive-design)
-8. [Technologies Used](technologies-used)
-	1. [Languages](#Language-used)
+7. [Security Features and Defensive Design](#security-features-and-defensive-design)
+8. [Technologies Used](#technologies-used)
+	1. [Languages](#languages)
     2. [Main Python Modules](#main-python-modules)
 	3. [Other](#other)
 9. [Deployment](#deployment)
@@ -63,6 +64,10 @@ The site will offer users information on all Oireachtas events, exhibitions and 
 * A visually appealing, accessible, and easy to use site 
 * An intuitive navigation with logical workflows for event booking management 
 * An ability to view information on events and manage bookings
+
+
+##### Back to [top](#table-of-contents)
+
 
 ## Planning
 
@@ -128,13 +133,17 @@ EPIC 7 – Documentation
 
 * Complete readme documentation 
 
+
+##### Back to [top](#table-of-contents)
+
+
 ## Design 
 
 ### Colour Scheme
 
 ![Colour palette image](docs/readme_images/colour-palette.png) 
 
-The colour palette selected for the site complements the palette of the Houses of the Oireachtas website. The dark green is the main colour on the website and the background pages are a light grey. The pink colour is mainly used in the navigation bar and on the detailed events page to break it up. Both the black and white colours are used for text throughout the site.  
+The colour palette selected for the site complements the palette of the Houses of the Oireachtas. The dark green is the main colour on the website and the background pages are a light grey. The pink colour is mainly used in the navigation bar and on the detailed events page to break it up. Both the black and white colours are used for text throughout the site.  
 
 ### Typography
 
@@ -210,9 +219,12 @@ An entity relationship diagram was created and shows the schemas for each of the
 </details>
 
 
+##### Back to [top](#table-of-contents)
+
+
 ## Features
 
-#### Navigation Menu
+### Navigation Menu
 
 *       USER STORY: As a developer, I need to create the navbar so that users can navigate the website
 
@@ -244,7 +256,7 @@ If a staff user chooses to register and/or login, the following navigation optio
 * Contact
 * Logout
 
-#### Footer 
+### Footer 
 
 *       USER STORY: As a developer I need to create the footer with social media links so this information can be found on any page on the website
 
@@ -254,7 +266,7 @@ A footer has been added to the bottom of the site, this contains social media li
 
 These icons have aria-labels added to ensure users with assistive screen reading technology know what the purpose of the links are for. They also open in new tabs as they lead users away from the site.
 
-#### Homepage
+### Homepage
 
 *       USER STORY: As a site owner, I would like a home page so that users can view information on my website
 *       USER STORY: As a site user, I want to read frequently asked questions so that I can find information on events
@@ -270,11 +282,11 @@ The carrousel images can be added to or replaced at any time using the backend a
 
 The second part of the home page is visitor information, this information is displayed in an accordion module. This will give users information on, where to find Leinster House and what gate to use, via both a text description and a map, the items that them will need to bring with them and how to book tickets if it is there first visit to the website. 
 
-#### Events pages
+### Events pages
 
 *       USER STORY: As a site user, I want to be able to find information on all Oireachtas tours so that I can decide if I want to book tickets
 
-**Events pages (List view of all events)**
+#### Events pages (List view of all events)
 
 ![List view of events image](docs/readme_images/features/list-view-events.jpg) 
 
@@ -282,7 +294,7 @@ The events page contains a list of upcoming events that taking place in Leinster
 
 If there are no events currently scheduled to take place a message will display for the user to notify them of that. 
 
-**Event page (Detailed event page)**
+#### Event page (Detailed event page)
 
 ![Detailed event page image](docs/readme_images/features/detailed-event-page.jpg) 
 
@@ -290,7 +302,7 @@ Each event has its own page, that contains three sections, the first has an imag
 
 The first and second sections are unique to the event itself, this information will help the user decide if they would like to attend the event and give them the option to book a ticket. The third section is a quick way for the user to find the visitor information. 
 
-**Create event page**
+#### Create event page
 
 *       USER STORY - As a staff member, I want to create events so I can allow bookings
 
@@ -300,7 +312,7 @@ A create event page was implemented to allow staff users to create new events vi
 
 This will allow staff the ability to create an event and publish it to the website from a single page, this will create the Event page and will display an event card on the Events page. 
 
-**Edit event page**
+#### Edit event page
 
 *       USER STORY - As a staff member, I want to be able to edit events
 
@@ -308,7 +320,7 @@ This will allow staff the ability to create an event and publish it to the websi
 
 On the event page, an edit button displays for staff and admin users only, this allows staff to easily edit any of the details or make the page inactive if they no longer want to display to the website, this will not delete the event. 
 
-**Delete event page**
+#### Delete event page
 
 *       USER STORY - As a staff member, I want to be able to delete events if they are no longer going ahead or are over
 
@@ -316,9 +328,9 @@ On the event page, an edit button displays for staff and admin users only, this 
 
 On the event page, a delete button displays for staff and admin users only, this allows staff to delete an event, once the button is selected, they will be taken to a confirmation page to confirm that they do want to delete the event. 
 
-#### Booking
+### Booking pages
 
-**Booking tickets**
+#### Booking tickets
 
 *       USER STORY: As a site user, I want to be able to book tickets for all available events so that I can attend
 
@@ -328,7 +340,7 @@ A booking page was created with a form that allows users to select the event tha
 
 Logic was added to the form validation to ensure the user does not book more than 4 tickets per booking and also there is enough tickets left to book, as there is a max capacity for each event.
 
-**Notification of booking**
+#### Notification of booking
 
 *       USER STORY: As a site user, I want to receive a conformation for event bookings so that I know the booking was completed successfully
 
@@ -338,7 +350,7 @@ Logic was added to the form validation to ensure the user does not book more tha
 
 Custom toast messages were implemented on the successful creation of bookings. This provides feedback to the user, to confirm the booking was successfully received.
 
-**Manage bookings**
+#### Manage bookings
 
 *       USER STORY: As a staff member, I want to view details of booking so I can manage the attendance of events
 
@@ -352,7 +364,7 @@ If the user has not booked any tickets, a message "You have not booked any ticke
 
 For staff users, all bookings will be available in the managed booking view so that staff can easily view all tickets booked. Staff have the option to both delete and edit a users booking from this screen.
 
-**Booking Overview**
+#### Booking Overview
 
 *       USER STORY: As a staff member, I want to view details of booking so I can manage the attendance of events
 
@@ -360,7 +372,7 @@ For staff, a booking overview was created, this will allow a snapshot of the num
 
 ![Booking overview for staff image](docs/readme_images/features/booking-overview.jpg) 
 
-**Delete Bookings**
+#### Delete Bookings
 
 *       USER STORY: As a site user, I want to be able to cancel bookings for events so that I can confirm I am no longer available
 
@@ -370,7 +382,7 @@ A delete button was added to the manage bookings page that will allow users to d
 
 For staff members, they also have the ability to delete any booking through the UI as well. This will allow staff to free up tickets should a user contact the staff member directly.
 
-**Edit Booking**
+#### Edit Booking
 
 *       USER STORY: As a staff member, I want to be able to edit the bookings for events so that I can change the number of tickets booked
 
@@ -378,7 +390,7 @@ For staff members, they also have the ability to delete any booking through the 
 
 On the manage bookings page, an edit button displays for staff and admin users only, this allows staff to easily edit any booking to change the number of tickets that have been booked.
 
-**Contact Us**
+#### Contact Us
 
 *       USER STORY: As a user, I would like to be able to contact the events team so that I can have any queries answered
 
@@ -390,9 +402,9 @@ A contact form was implemented for users of the site so they could contact the e
 
 On successful completion of the form the user will be re-directed to a success message and receive email confirmation. This will allow the user to know their message has been received. 
 
-**Error Pages**
+### Error Pages
 
-**404 page**
+#### 404 page
 
 *   USER STORY - As a developer, I need to implement a 404-error page to alert users when they have accessed a page that doesn't exist
 
@@ -402,7 +414,7 @@ A 404 page has been implemented and will display if a user navigates to a broken
 
 The 404 page will allow the user to easily navigate back to the main website if they direct to a broken link / missing page, without the need of the browsers back button.
 
-**403 page**
+#### 403 page
 
 *   As a developer, I need to implement a 403-error page to redirect unauthorised users to, so that I can secure my views
 
@@ -412,7 +424,7 @@ A 403 error page has been implemented to provide feedback to the user when they 
 
 Users will be directed to this page if they alter the URL's and attempt to edit, delete or access pages that are restricted.
 
-**500 page**
+#### 500 page
 
 *   As a developer, I need to implement a 500-error page to alert users when an internal server error occurs
 
@@ -422,25 +434,38 @@ A 500 error page has been displayed to alert users when an internal server error
 
 The message outlines to users that the problem is with the website not anything they have done.
 
-**Favicon**
+### Favicon
 
 ![Favicon image](docs/readme_images/features/favicon.png) 
 
 A site wide favicon was implemented. This provides an image in the tabs header to allow the user to easily identify the website if they have multiple tabs open.
 
-### Future Features 
+### Toast messages
 
-**Search function for staff**
+Custom toast messages were implemented throughout the site, initially created for [notification of bookings](#notification-of-booking). These also now provide the user feedback when they have logged in or logged out. 
+
+For staff users, they have been implemented in the events section, when an event is created, edited or deleted. The toast messages are informative and have a lifespan of just two seconds and take up a very small portion of the screen.
+
+
+##### Back to [top](#table-of-contents)
+
+
+## Future Features 
+
+### Search function for staff
 
 It would be nice to include a search function for staff on the manage bookings page.
 
-**QR codes for tickets**
+### QR codes for tickets
 
-Adding a generate QR code fucntion that emails to users as there ticket for an event.
+Adding a generate QR code function that emails to users as their ticket for an event.
 
 ## Testing 
 
 Due to the amount of information regarding testing, it has been detailed in the following [Test document](https://github.com/michelleconville/oir_events/blob/main/TESTING.md).
+
+
+##### Back to [top](#table-of-contents)
 
 
 ## Security Features and Defensive Design
@@ -454,19 +479,23 @@ Environment variables are stored in an env.py for security purposes to ensure no
 Cross-Site Request Forgery (CSFR) tokens are used on all forms throughout the project.
 
 
+##### Back to [top](#table-of-contents)
+
+
 ## Technologies Used
-### Language used
+### Languages
 *   HTML - The structure of the Website was developed using HTML as the main language.
 *   CSS - The Website was styled using custom CSS in an external file.
 *   JavaScript - This was used to make the message automaticly close
 *   Python - The main programming language used for the application using the Django Framework.
 
-### Main Python Modules Used
+### Main Python Modules
 
 *   Django Class based views (ListView, UpdateView, DeleteView, CreateView) - Used to create, read, update and delete
 *   Mixins (LoginRequiredMixin, UserPassesTestMixin) - Used to enforce login required on views and restrict users to the tasks that they could proform
 *   Messages - Used to display feedback to users
 *   CKEditor - Used for rich text editor on the Event pages
+*   All External Python Modules are in the requirements.txt file
 
 ### Other
 
@@ -481,6 +510,10 @@ Cross-Site Request Forgery (CSFR) tokens are used on all forms throughout the pr
 *   Coolors - to make color palette
 *   Am I Responsive - to create an image of the website shown on different devices.
 *   Boxicons - to create the icons for social media
+*   Lucidchart used to make a database diagram.
+
+
+##### Back to [top](#table-of-contents)
 
 
 ## Deployment
@@ -550,11 +583,21 @@ Scroll to the bottom of the deploy page and select preferred deployment type:
 * Select the correct branch for deployment from the drop-down menu and click **Deploy Branch** for manual deployment.
 
 
+##### Back to [top](#table-of-contents)
+
+
 ## Credits
 Media
 * All images were provided and used from the [Oireachtas Flickr account](https://www.flickr.com/photos/oireachtas/)
 * Content used on the Visitor Information area and Event pages was used from the [Houses of the Oireachtas website](https://www.oireachtas.ie/)
 * Logo used is the Official Logo for the Houses of the [Houses of the Oireachtas](https://www.oireachtas.ie/)
 
+Other
+*   [RIS SMOK](https://github.com/Iris-Smok/The-Healthy-Family-PP4/blob/main/README.md)
+*   [Gareth McGirr](https://github.com/Gareth-McGirr/Portfolio-Project-4-SizzleAndSteak/blob/main/README.md)
+
+##  Acknowledgements
+Special thanks to my mentor Daisy for her assistance throughout this project.
 
 
+##### Back to [top](#table-of-contents)

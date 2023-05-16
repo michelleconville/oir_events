@@ -3,13 +3,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Oireachtas Events - {% block title %}{% endblock %}</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Oireachtas, Events, book">
+    <meta name="keywords" content="Oireachtas, Events, booking">
     <meta name="description" content="Events website to book events">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+     <!-- Favicon icons -->
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+    <!-- css files -->
     {% block extra_css %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
@@ -19,6 +23,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     {% endblock %}
+    <!-- js files -->
     {% block postload_js %}
     <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
@@ -27,7 +32,6 @@
   ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {% endblock %}
-    <title>Oireachtas Events - {% block title %}{% endblock %}</title>
 </head>
 <body>
     {% include 'includes/header.html' %}

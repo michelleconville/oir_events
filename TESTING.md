@@ -4,7 +4,7 @@ I took a multi-stage approach to testing the site.
 
 The first stage was continuous testing as the site was being developed. This was important to do during development of the django apps to ensure that the different models, views and forms contained or returned the correct data type or values. During the styling of the site, I checked the visual appearance within a live server window to preview the changes before they were committed to reduce the number of bugs.
 
-For the second stage of testing, I used a more structured approach, I created both manaual and automated test cases, using the user stories to ensure all the features worked as expected, I executed the tests individually making a note of any errors or changes to the designed behaviour. Any errors were corrected and then the tests repeated.
+For the second stage of testing, I used a more structured approach, I created both manual and automated test cases, using the user stories to ensure all the features worked as expected, I executed the tests individually making a note of any errors or changes to the designed behaviour. Any errors were corrected and then the tests repeated.
 
 I then validated all the different types of code and ran performance and accessibility test across different browsers and device types.
 
@@ -27,7 +27,7 @@ Finally, I asked friends to look at the site on their devices and report any iss
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| On any page click on the Home link in the Navigation bar  | Homepage will load| Works as expected |
+| On any page click on the Home link in the Navigation bar | Homepage will load| Works as expected |
 | On any page click on the Events link in the Navigation bar | Events page will load| Works as expected |
 | On any page click on the Contact link in the Navigation bar | Contact us page will load| Works as expected |
 | On any page click on the 'Register' link in the navigation bar | Sign up page will load| Works as expected |
@@ -40,7 +40,7 @@ Finally, I asked friends to look at the site on their devices and report any iss
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
 | On any page click on the Bookings link in the navigation bar, select New Booking | Booking page will load| Works as expected |
-| On any page click on the Bookings link in the navigation bar, select Manage Bookins | Manage bookings page will load| Works as expected |
+| On any page click on the Bookings link in the navigation bar, select Manage Bookings | Manage bookings page will load| Works as expected |
 | On any page click on the Logout link in the navigation bar | Logout page will load| Works as expected |
 
 
@@ -51,8 +51,8 @@ Finally, I asked friends to look at the site on their devices and report any iss
 | On any page click on the Add Event link in the navigation bar | Add event page will load| Works as expected |
 | On any page click on the Bookings link in the navigation bar, select Booking Overview | Booking Overview page will load| Works as expected |
 | On any page click on the Bookings link in the navigation bar, select New Booking | Booking page will load| Works as expected |
-| On any page click on the Bookings'link in the navigation bar, select Manage Bookins | Manage bookings page will load| Works as expected |
-| On any page click on the 'Logout' link in the navigation bar | Logout page will load| Works as expected |
+| On any page click on the Bookings link in the navigation bar, select Manage Bookings | Manage bookings page will load| Works as expected |
+| On any page click on the Logout link in the navigation bar | Logout page will load| Works as expected |
 
 
 * USER STORY: As a developer I need to create the footer with social media links so this information can be found on any page on the website
@@ -76,7 +76,7 @@ Finally, I asked friends to look at the site on their devices and report any iss
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| On the homepage, scroll to Visitor Information, click on *where to find us* | Informaiton will display  | Works as expected |
+| On the homepage, scroll to Visitor Information, click on *where to find us* | Visitor information will display | Works as expected |
 
 * USER STORY: As a site user, I want to be able to find information on all Oireachtas tours so that I can decide if I want to book tickets
 
@@ -130,8 +130,8 @@ Finally, I asked friends to look at the site on their devices and report any iss
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Select *Bookings* in the navagation bar, choose *Manage Bookings* link | Manage Booking page will appear | Works as expected |
-| Select *Bookings* in the navagation bar, choose *Booking Overview* link | Booking Overview page will appear | Works as expected |
+| Select *Bookings* in the navigation bar, choose *Manage Bookings* link | Manage Booking page will appear | Works as expected |
+| Select *Bookings* in the navigation bar, choose *Booking Overview* link | Booking Overview page will appear | Works as expected |
 
 
 * USER STORY: As a site user, I want to be able to cancel bookings for events so that I can confirm I am no longer available
@@ -225,7 +225,7 @@ JSHint Static Code Analysis Tool for JavaScript was used to validate the Javascr
 
 ### Accessibility
 
-The WAVE WebAIM web accessibility evaluation tool was used throughout development and for final testing of the deployed website to ensure the website met high accessibility standard. I have included an image of the homeage resulit only, however, all pages passed with 0 errors. I tested the website through a [Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/) to further test the contrast and no issues were detected.
+The WAVE WebAIM web accessibility evaluation tool was used throughout development and for final testing of the deployed website to ensure the website met high accessibility standard. I have included an image of the homepage result only, however, all pages passed with 0 errors. I tested the website through a [Colour Contrast Accessibility Validator](https://color.a11y.com/Contrast/) to further test the contrast and no issues were detected.
 
 
 <details><summary>WAVE Homepage results</summary>
@@ -234,7 +234,7 @@ The WAVE WebAIM web accessibility evaluation tool was used throughout developmen
 
 </details>
 
-<details><summary>Color Contrast Accessibility Validator results</summary>
+<details><summary>Colour Contrast Accessibility Validator results</summary>
 
 ![Color Contrast Accessibility Validator results](docs/readme_images/test/colour-validtion.jpg) 
 
@@ -329,7 +329,7 @@ In addition to the above listed devices, the Google Chrome Developer Tools devic
 
 1. Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented')
 
-This Error appeared in the dev tools, I updated the JS script for messages to close automaticly and this resolved this issue.
+This Error appeared in the dev tools, I updated the JS script for messages to close automatically and this resolved this issue.
 
 2. Booking tickets - more can be booked than available
 
