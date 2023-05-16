@@ -318,7 +318,7 @@ This will allow staff the ability to create an event and publish it to the websi
 
 ![Edit event page image](docs/readme_images/features/edit_event.jpg) 
 
-On the event page, an edit button displays for staff and admin users only, this allows staff to easily edit any of the details or make the page inactive if they no longer want to display to the website, this will not delete the event. 
+On the event page, an edit button displays for staff and admin users only, this allows staff to easily edit any of the details or make the page inactive if they no longer want it to display on the website, this will not delete the event. If users have booked tickets for the event and it is made inactive, the tickets will still appear in their [Manage bookings view](#manage-bookings).
 
 #### Delete event page
 
@@ -326,7 +326,7 @@ On the event page, an edit button displays for staff and admin users only, this 
 
 ![Edit event page image](docs/readme_images/features/delete_event.jpg) 
 
-On the event page, a delete button displays for staff and admin users only, this allows staff to delete an event, once the button is selected, they will be taken to a confirmation page to confirm that they do want to delete the event. 
+On the event page, a delete button displays for staff and admin users only, this allows staff to delete an event, once the button is selected, they will be taken to a confirmation page to confirm that they do want to delete the event. Once an event has been deleted, any ticket bookings associated with that event will also be deleted.
 
 ### Booking pages
 
@@ -337,6 +337,10 @@ On the event page, a delete button displays for staff and admin users only, this
 ![Book tickets page image](docs/readme_images/features/create_booking.jpg) 
 
 A booking page was created with a form that allows users to select the event that they would like to attend and the number of tickets they require for the event. Each user can book a maximum of 4 tickets per booking.
+
+![Book tickets page image](docs/readme_images/features/booking-validation-max-capicity.jpg) 
+
+![Book tickets page image](docs/readme_images/features/booking-validation-per-booking.jpg) 
 
 Logic was added to the form validation to ensure the user does not book more than 4 tickets per booking and also there is enough tickets left to book, as there is a max capacity for each event.
 
@@ -356,7 +360,9 @@ Custom toast messages were implemented on the successful creation of bookings. T
 
 ![Manage booking for users image](docs/readme_images/features/manage-booking.jpg) 
 
-For users, a manage bookings page was create with validation checks on the user. This shows all of the users’ bookings. This will allow the user to view their upcoming bookings when needed. The user has the option to delete there booking from this page also. 
+For users, a manage bookings page was created with validation checks on the user. This shows all of the users’ bookings. This will allow the user to view their upcoming bookings when needed. The user has the option to delete there booking from this page also. 
+
+![Manage booking for users image](docs/readme_images/features/manage-booking-none.jpg) 
 
 If the user has not booked any tickets, a message "You have not booked any tickets" will appear on the manage booking page.
 

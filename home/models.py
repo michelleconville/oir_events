@@ -5,7 +5,7 @@ import cloudinary
 
 class CarouselImage(models.Model):
     """
-    A model to create aa carousel
+    A model to create a carousel
     """
     image = cloudinary.models.CloudinaryField("image")
     caption = models.CharField(max_length=255, blank=True)
