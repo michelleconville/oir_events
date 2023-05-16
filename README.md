@@ -128,7 +128,11 @@ The site consists of the following pages:
 
 #### Database
 
+The database was designed to allow CRUD functionality to be available to registered users, when signed in. The user model is at the center of the application as it connects the Events and Bookings, linked by primary/foreign key relationships. Additionally, the contact model was designed to allow non logged in users interact with the website.
 
+An entity relationship diagram was created and shows the schemas for each of the models and how they are related.
+
+![data model](docs/readme_images/data-model.jpg) 
 
 #### Wireframes
 
