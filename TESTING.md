@@ -224,6 +224,72 @@ The WAVE WebAIM web accessibility evaluation tool was used throughout developmen
 
 </details>
 
+### Performance
+
+Google Lighthouse in Google Chrome Developer Tools was used to test the performance of the website.
+
+<details>
+<summary>Homepage</summary>
+
+![homepage page](docs/readme_images/test/homepage-lighthouse.jpg)
+</details>
+
+
+<details>
+<summary>Events</summary>
+
+![Events page](docs/readme_images/test/events-lighthouse.jpg)
+</details>
+
+<details>
+<summary>Event detail</summary>
+
+![Event detail page](docs/readme_images/test/eventdetail-lighthouse.jpg)
+</details>
+
+<details>
+<summary>Add Event</summary>
+
+![Add event page](docs/readme_images/test/addevent-lighthouse.jpg)
+</details>
+
+<details>
+<summary>Contact</summary>
+
+![Contact page](docs/readme_images/test/contact-lighthouse.jpg)
+</details>
+
+<details>
+<summary>Register</summary>
+
+![Register page](docs/readme_images/test/register-lighthouse.jpg)
+</details>
+
+<details>
+<summary>Login</summary>
+
+![Login page](docs/readme_images/test/login-lighthouse.jpg)
+</details>
+
+<details>
+<summary>Booking overview</summary>
+
+![Booking overview page](docs/readme_images/test/bookingoverview-lighthouse.jpg)
+</details>
+
+<details>
+<summary>Manage Booking</summary>
+
+![Manage Booking page](docs/readme_images/test/managebookings-lighthouse.jpg)
+</details>
+
+<details>
+<summary>Create Booking</summary>
+
+![Create Booking page](docs/readme_images/test/createbooking-lighthouse.jpg)
+</details>
+
+
 
 ##### Back to [top](#table-of-contents)
 

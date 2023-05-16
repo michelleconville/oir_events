@@ -10,9 +10,9 @@ View the [Live site](https://oir-events.herokuapp.com/)
 
 ### Project goals
 
-The Houses of the Oireachtas regularly hosts events and exhibitions, and also offers the public an opportunity to visit Leinster House for a tour of the historic building. The Oireachtas Events site seeks to provide a single booking system for tickets to all Oireachtas events and tours.  
+The Houses of the Oireachtas (Irish Parliament) regularly hosts events and exhibitions, and also offers the public an opportunity to visit Leinster House for a tour of the historic building. The Oireachtas Events site seeks to provide a single booking system for tickets to all Oireachtas events and tours.
 
-The site will offer users information on all Oireachtas events, exhibitions and open tours, an ability to create an account to book, reschedule and cancel tickets, and important visit information. The site will allow the site owner to manage ticketing for all events through one site.  
+The site will offer users information on all Oireachtas events, exhibitions and open tours, an ability to create an account to book and cancel tickets, and will also provide important visit information. The site will allow the site owner to manage ticketing for all events through one site.
 
 ## User Experience
 
@@ -20,7 +20,7 @@ The site will offer users information on all Oireachtas events, exhibitions and 
 
 * Members of the public who would like more information on Oireachtas events 
 * Members of the public who would like to attend Oireachtas events 
-* Members of the public who would like to delete booking for Oireachtas events 
+* Members of the public who would like to delete bookings for Oireachtas events 
 
 ### User Requirements and Expectations 
 
@@ -34,7 +34,7 @@ The site will offer users information on all Oireachtas events, exhibitions and 
 
 This project was developed using agile methodologies by delivering features in sprints. There were 3 sprints in total, the work was carried out over four weeks.
 
-Initially user stories were developed, and a full set of acceptance criteria was created in order to define the functionality of the required feature, these user stories were assigned to epics (milestones), prioritised under the labels, *Must have*, *Should have*, and *Could have*. Then they were assigned to sprints and story pointed, according to complexity. *Must have* user stories were completed first, *should haves* and then finally *could haves*. It was done this way to ensure that all core requirements were completed first, with the nice to have features being added should there be capacity.
+Initially user stories were developed, and a full set of acceptance criteria was created in order to define the functionality of the required feature. These user stories were assigned to epics (milestones) and prioritised under the labels, *Must have*, *Should have*, and *Could have*. Then they were assigned to sprints and story pointed, according to complexity. *Must have* user stories were completed first, followed by *should haves* and then finally *could haves*. This approach was taken to ensure that all core requirements were completed first, with the nice to have features being added should there be capacity. 
 
 In GitHub projects, a Kanban board was used to track the progress of the project, the workflow started with *To do* then *In Progress*, *Done* and finally *Closed*. 
 
@@ -70,7 +70,7 @@ Epic 4 – Bookings
 * As a site user, I want to be able to book tickets for all available events so that I can attend
 * As a staff member, I want to be able to edit the bookings for events so that I can change the number of tickets booked
 * As a site user, I want to be able to cancel bookings for events so that I can confirm I am no longer available
-* As a site user, I want to receive a conformation for event bookings so that I have a record of the bookings I made 
+* As a site user, I want to receive a confirmation for event bookings so that I have a record of the bookings I made 
 * As a staff member, I want to view details of booking so I can manage the attendance of events
 
 Epic 5 Additional pages
@@ -95,9 +95,9 @@ EPIC 7 – Documentation
 
 ### Colour Scheme
 
-![Colour pallette image](docs/readme_images/colour-palette.png) 
+![Colour palette image](docs/readme_images/colour-palette.png) 
 
-The dark green is the main colour on the website and the background pages are a light grey. The pink colour is mainly used in the navigation bar and on the detailed events page to break it up. Both the black and white colours are used for text through out the site. 
+The colour palette selected for the site complements the palette of the Houses of the Oireachtas website. The dark green is the main colour on the website and the background pages are a light grey. The pink colour is mainly used in the navigation bar and on the detailed events page to break it up. Both the black and white colours are used for text throughout the site.  
 
 ### Typography
 
@@ -182,6 +182,12 @@ An entity relationship diagram was created and shows the schemas for each of the
 ![Navbar image](docs/readme_images/features/nav-bar.jpg) 
 
 The initial navigation menu contain links to the Home, Events, Contact, Register, Login pages. The navigation menu is displayed on all pages and changes into a hamburger menu on smaller devices. This will allow users to view the site from any device.
+
+* Home 
+* Events -> detailed event page
+* Contact
+* Register
+* Login
 
 The navigation changes depending on whether the user is an end user or a staff user. 
 
