@@ -358,6 +358,6 @@ Bugs
 
 1. Instagram Link
 
-If a user is not already logged into Instagram on their device, they will get a page not found when they click on the Instagram social media icon in the footer. I have been unable to resolve this issue. Everything works as expected if the user is logged in to Instagram
+If a user is not already logged into Instagram on their device, they will get a *Sorry, this page isn't available* redirct page when they click on the Instagram social media icon in the footer. I have been unable to resolve this issue. Everything works as expected if the user is logged in to Instagram
 
 ##### Back to [top](#table-of-contents)
