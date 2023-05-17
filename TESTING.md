@@ -353,4 +353,11 @@ When users are booking tickets, more tickets can be booking than are available, 
 
 The dropdown in the nav menu for bookings will not work, the follow error appears when you use the developer tools to look at the issue *Uncaught TypeError: i.createPopper is not a function*. After adding the popper.js script, this resolved the issue
 
+## Unfixed 
+Bugs
+
+1. Instagram Link
+
+If a user is not already logged into Instagram on their device, they will get a page not found when they click on the Instagram social media icon in the footer. I have been unable to resolve this issue. Everything works as expected if the user is logged in to Instagram
+
 ##### Back to [top](#table-of-contents)
