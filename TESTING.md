@@ -232,7 +232,7 @@ JSHint Static Code Analysis Tool for JavaScript was used to validate the Javascr
 
 <details><summary>Example of pep8ci results</summary>
 
-![Example of pep8ci results](docs/readme_images/test/pep8-validation.JPG) 
+![Example of pep8ci results](docs/readme_images/test/pep8-validation.jpg) 
 
 </details>
 

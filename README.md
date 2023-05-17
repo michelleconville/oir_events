@@ -40,6 +40,7 @@ The site will offer users information on all Oireachtas events, exhibitions and 
 	7. [Error Pages](#error-pages)
 	8. [Favicon](#favicon)
     9. [Toast messages](#toast-messages)
+    10. [Authentication](#authentication)
 5. [Future Features](#future-features)
 6. [Testing](#testing)
 7. [Security Features and Defensive Design](#security-features-and-defensive-design)
@@ -451,6 +452,22 @@ A site wide favicon was implemented. This provides an image in the tabs header t
 Custom toast messages were implemented throughout the site, initially created for [notification of bookings](#notification-of-booking). These also now provide the user feedback when they have logged in or logged out. 
 
 For staff users, they have been implemented in the events section, when an event is created, edited or deleted. The toast messages are informative and have a lifespan of just two seconds and take up a very small portion of the screen.
+
+#### Authentication 
+
+*       USER STORY: As a developer, I need to implement allauth so that users can sign up and have access to the website’s features
+*       USER STORY: As a site owner, I would like the allauth pages customized to that they fit in with the sites styling
+*       As a site owner, I want users to verify their email when registering an account so that I can ensure that a valid email address is being used. 
+
+![Register form image](docs/readme_images/features/register.jpg) 
+
+![Contact form image](docs/readme_images/features/login.jpg) 
+
+![Contact form image](docs/readme_images/features/logout.jpg) 
+
+Register, login and logout pages were implemented for users of the site using Django allauth. The different pages were styled using the websites look and feel.
+
+This enables end users to securely register and login and book and manage their tickets. For staff users, this also allows them to manage all tickets and adding, editing and deleting events. 
 
 
 ##### Back to [top](#table-of-contents)
